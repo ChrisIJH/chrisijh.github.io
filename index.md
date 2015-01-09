@@ -10,8 +10,7 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-1">
        <div class="content">
-           <h2><font color="red">Visualization and Geography</font></h2>
-           For visualization and Mapping.
+           <h2><font color="Grey">Visualization and Geography</font></h2>
        </div>
     </div>
 </div>
