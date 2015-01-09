@@ -16,13 +16,13 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-2">
         <div class="content">
-            <h3><a href="http://chrisijh.github.io/Tableau/">Tableu Exercises</a></h3>
+            <h3><a href="{{base_url}}/visual/">Tableu Exercises</a></h3>
             <p>I implemented some Tableau practices including interfacing with R. </p>
         </div>
      </div>
      <div class="col-1-2">
         <div class="content">
-            <h3><a href="http://chrisijh.github.io/ArcGIS-1/">ArcGIS Exercises</a></h3> 
+            <h3><a href="{{base_url}}/geomap/">ArcGIS Exercises</a></h3> 
             <p>ArcGIS Desktop connecting to ArcGIS Server.</p>
         </div>
      </div> 
