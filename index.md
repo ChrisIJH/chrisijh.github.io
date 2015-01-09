@@ -24,7 +24,7 @@ layout: default
      </div>
      <div class="col-1-2">
         <div class="content">
-            <h3><font color="purple">ArcGIS Exercises</font></h3> 
+            <h3><a href="http://chrisijh.github.io/ArcGIS-1/">ArcGIS Exercises</a></h3> 
             <p>ArcGIS Desktop connecting to ArcGIS Server.
         </div>
      </div> 
