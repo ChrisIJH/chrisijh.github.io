@@ -7,7 +7,7 @@ permalink: /geomap/ArcGIS-1/
 
 
 ## Data collection and build the map app
-This is how to add layers one by one acquiring from web resources. **[ArcGIS example 2](http://chrisijh.github.io/ArcGIS-2/)** shows how to add layers from ArcGIS server.  
+This is how to add layers one by one acquiring from web resources. **[ArcGIS example 2](http://chrisijh.github.io/geomap/ArcGIS-2/)** shows how to add layers from ArcGIS server.  
 
 **Target Data**:  
   - Maryland State Boundary  

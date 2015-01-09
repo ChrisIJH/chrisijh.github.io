@@ -7,9 +7,9 @@ permalink: /geomap/ArcGIS-2/
 
 
 ## Data collection and build the map app
-This is how to add layers using ArcGIS server especially maryland data server this time. **[ArcGIS example 1](http://chrisijh.github.io/ArcGIS-1/)** shows how to add layers from web resources one by one.  
+This is how to add layers using ArcGIS server especially maryland data server this time. **[ArcGIS example 1](http://chrisijh.github.io/geomap/ArcGIS-1/)** shows how to add layers from web resources one by one.  
 
-**Target Data**: same as [ArcGIS example 1](http://chrisijh.github.io/ArcGIS-1/) 
+**Target Data**: same as [ArcGIS example 1](http://chrisijh.github.io/geomap/ArcGIS-1/) 
   - Maryland State Boundary  
   - Maryland Counties Boundary  
   - Maryland Public School  
