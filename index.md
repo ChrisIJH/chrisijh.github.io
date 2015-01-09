@@ -18,7 +18,7 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-2">
         <div class="content">
-            <h3><font color="purple">Tableu Exercises</font></h3>
+            <h3><a href="http://chrisijh.github.io/Tableau/">Tableu Exercises</a></h3>
             <p>I implemented some Tableau practices including interfacing with R. </p>
         </div>
      </div>
