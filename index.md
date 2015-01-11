@@ -27,6 +27,26 @@ layout: default
         </div>
      </div> 
 </div>
+<hr>
+<div class="grid grid-pad">
+    <div class="col-1-1">
+       <div class="content">
+           <h2><font color="Grey">Modeling and Analysis</font></h2>
+       </div>
+    </div>
+</div>
+<div class="grid grid-pad">
+    <div class="col-1-2">
+        <div class="content">
+            <h3><a href="#">Natural Language Processing</a></h3>
+        </div>
+     </div>
+     <div class="col-1-2">
+        <div class="content">
+            <h3><a href="#">Optimization</a></h3> 
+        </div>
+     </div> 
+</div>
 
 <hr>
 
