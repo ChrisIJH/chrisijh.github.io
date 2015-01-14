@@ -13,7 +13,7 @@ After I studied the key concepts of CRSP indexes from their web site, I made a s
 <br>
 The presentation can be viewed thru [here](http://prezi.com/pbx_dlikdkm1/?utm_campaign=share&utm_medium=copy)  
 
-Here is the copy of the presentation I made.  
+Here is the brief copy of the presentation I made.  
 
 ![1](https://www.evernote.com/shard/s9/sh/65892a5f-ddb4-427c-9961-be7c7a6f4196/b59ac527e1c6124dbe42cbf51c6981b6/deep/0/crsp-index.pdf-(page-3-of-18).png)  
 ![2](https://www.evernote.com/shard/s9/sh/88b324b0-f1ec-4eff-b9cd-1865ac450874/e979dd1ea1fc476da4fb2590740621a1/deep/0/crsp-index.pdf-(page-4-of-18).png)  
