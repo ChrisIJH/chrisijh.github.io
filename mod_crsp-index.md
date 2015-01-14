@@ -7,8 +7,7 @@ permalink: /modeling-analysis/crsp-index/
 # Understanding CRSP indexes   
 from crsp.com
 
-After I studied the key concepts of CRSP indexes from their web site, I made a simple presentation on prezi.com which is a great online presentation tool.  
-[http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts](http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts)  
+After I studied the key concepts of CRSP indexes from their web site [http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts](http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts), I made a simple presentation on prezi.com which is a great online presentation tool.  
 <hr>
 <br>
 The presentation can be viewed thru [here](http://prezi.com/pbx_dlikdkm1/?utm_campaign=share&utm_medium=copy)  
