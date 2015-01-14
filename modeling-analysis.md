@@ -8,5 +8,5 @@ permalink: /modeling-analysis/
 
 # Projects
 
-<a href="{{ site.baseurl }}/modeling-analysis/mod_crsp_index/">Undestanding CRSP indexes</a>
+<a href="{{ site.baseurl }}/modeling-analysis/crspi-index/">Undestanding CRSP indexes</a>
 

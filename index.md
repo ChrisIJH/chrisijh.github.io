@@ -38,7 +38,7 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-2">
         <div class="content">
-            <h3><a href="#">CRSP indexes</a></h3>
+            <h3><a href="{{ base_url }}/modeling-analysis/crsp_index/">CRSP indexes</a></h3>
         </div>
      </div>
      <div class="col-1-2">
