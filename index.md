@@ -49,6 +49,7 @@ layout: default
 </div>
 
 <hr>
+<!--
 
 <div class="grid grid-pad">
     <div class="col-1-1">
@@ -57,7 +58,6 @@ layout: default
        </div>
     </div>
 </div>
-<!--
 <div class="grid grid-pad">
     <div class="col-1-2">
         <div class="content">
