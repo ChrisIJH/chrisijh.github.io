@@ -36,17 +36,16 @@ layout: default
     </div>
 </div>
 <div class="grid grid-pad">
-    <div class="col-1-2">
+    <div class="col-1-1">
         <div class="content">
-            <h3><a href="{{ base_url }}/modeling-analysis/crsp-index/">CRSP indexes</a></h3>
+            <h3><a href="{{ base_url }}/modeling-analysis/crsp-index/">Understanding CRSP indexes</a></h3>
         </div>
      </div>
-     <div class="col-1-2">
+    <div class="col-1-1">
         <div class="content">
-            <h3><a href="#">Optimization</a></h3> 
-            <p>Mean-Variance Optimization</p>
+            <h3><a href="{{ base_url }}/modeling-analysis/equity-style-analysis/">Equity Style Analysis</a></h3>
         </div>
-     </div> 
+     </div>
 </div>
 
 <hr>
