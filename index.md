@@ -53,11 +53,11 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-1">
        <div class="content">
-           <h2><font color="Grey">Big Data and the related</font></h2>
+           <h2><font color="Grey">Big Data related</font></h2>
        </div>
     </div>
 </div>
-
+<!--
 <div class="grid grid-pad">
     <div class="col-1-2">
         <div class="content">
@@ -72,5 +72,6 @@ layout: default
         </div>
      </div> 
 </div>
+-->
 
 <hr>
