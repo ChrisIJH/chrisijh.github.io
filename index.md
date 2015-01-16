@@ -43,13 +43,12 @@ layout: default
      </div>
     <div class="col-1-1">
         <div class="content">
-            <h3><a href="{{ base_url }}/modeling-analysis/equity-style-analysis/">Equity Style Analysis</a></h3>
+            <h3><a href="{{ base_url }}/modeling-analysis/equity-style-analysis/">Cluster Analysis(Equity Style Management)</a></h3>
         </div>
      </div>
 </div>
 
 <hr>
-<!--
 
 <div class="grid grid-pad">
     <div class="col-1-1">
@@ -62,16 +61,14 @@ layout: default
     <div class="col-1-2">
         <div class="content">
             <h3><a href="#">Natural Language Processing</a></h3>
-            <p>Examples of using Amazon Web Services and Google Cloud for Big Data Stack</p>
         </div>
      </div>
      <div class="col-1-2">
         <div class="content">
             <h3><a href="#">Apache Spark</a></h3> 
-            <p>Apache Spark is used with interactive analysis capability using iPython</p>
+            <p>Apache Spark is used with interactive analysis capability using iPython for Value At Risk.</p>
         </div>
      </div> 
 </div>
--->
 
 <hr>

@@ -1,0 +1,26 @@
+---
+layout: level1default 
+permalink: /modeling-analysis/equity-style-analysis/
+---
+
+
+# Equity Style Analysis
+
+When it comes to equity style analysis, it falls into 2 categories: Fundamental Based and Return Based. In this page, I 
+studied and implemented return-based style analysis using cluster analysis.
+<hr>
+<br>
+
+
+
+
+
+[References]
+
+[1] Alexander, Carol. Market Risk Analysis. Vol. II. Chichester, England: Wiley, 2008. Print.  
+[2] Tsay, Ruey S. Analysis of Financial Time Series. Hoboken, NJ: Wiley, 2005. Print.  
+[3] Fabozzi, Frank J., Sergio M. Focardi, and Petter N. Kolm. Quantitative Equity Investing Techniques and Strategies. Hoboken, NJ: John Wiley, 2010. Print.  
+[4] Cornuejols, Gerard, and Reha Tütüncü. Optimization Methods in Finance. Cambridge, UK: Cambridge UP, 2007. Print.  
+[5] Coggin, T. Daniel., and Frank J. Fabozzi. Handbook of Equity Style Management. Hoboken, NJ: Wiley, 2003. Print.  
+
+
