@@ -31,7 +31,7 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-1">
        <div class="content">
-           <h2><font color="Grey">Modeling and Analysis in Finance</font></h2>
+           <h2><font color="Grey">Modeling and Analysis</font></h2>
        </div>
     </div>
 </div>
