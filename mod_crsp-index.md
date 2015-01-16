@@ -12,6 +12,7 @@ After I studied the key concepts of CRSP indexes from their web site [http://www
 <br>
 The presentation can be viewed thru [here](http://prezi.com/pbx_dlikdkm1/?utm_campaign=share&utm_medium=copy)  
 
+<iframe src="http://prezi.com/embed/pbx_dlikdkm1/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;token=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
 Here is the brief copy of the presentation I made.  
 
 ![1](https://www.evernote.com/shard/s9/sh/65892a5f-ddb4-427c-9961-be7c7a6f4196/b59ac527e1c6124dbe42cbf51c6981b6/deep/0/crsp-index.pdf-(page-3-of-18).png)  
