@@ -48,9 +48,12 @@ layout: default
      </div>
     <div class="col-1-1">
         <div class="content">
-            <h3><a href="{{ base_url }}/modeling-analysis/factor-model-1/">Factor Model/a></h3>
+            <h3><a href="{{ base_url }}/modeling-analysis/factor-model-1/">Factor Model</a></h3>
         </div>
      </div>
+     
+     
+     
 </div>
 
 <hr>

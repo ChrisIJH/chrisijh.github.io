@@ -5,12 +5,14 @@ permalink: /modeling-analysis/crsp-index/
 
 
 # Understanding CRSP indexes   
-from crsp.com
+from key concepts described at crsp.com
 
-After I studied the key concepts of CRSP indexes from their web site [http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts](http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts), I made a simple presentation on prezi.com which is a great online presentation tool.  
+CRSP(Center for Research in Security Prices) provides indexes for the investment community and academic research groups. After I studied the key concepts of CRSP indexes from their web site
+[http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts](http://www.crsp.com/indexes-pages/crsp-indexes-our-key-concepts),
+I made a simple presentation about concepts on prezi.com which is a great online presentation tool.  
 <hr>
 <br>
-The presentation can be viewed thru [here](http://prezi.com/pbx_dlikdkm1/?utm_campaign=share&utm_medium=copy)  
+The presentation also can be viewed thru [here](http://prezi.com/pbx_dlikdkm1/?utm_campaign=share&utm_medium=copy)  
 
 <iframe src="http://prezi.com/embed/pbx_dlikdkm1/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;token=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
 Here is the brief copy of the presentation I made.  
