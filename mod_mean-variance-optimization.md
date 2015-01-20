@@ -299,6 +299,8 @@ Then, graph it.
 <hr>
 ## Python Implementation
 
+Numpy and pandas is used. Expecially, cvxopt is used for linear programming.
+
     __author__ = 'hwang'
 
     import pandas as pd
