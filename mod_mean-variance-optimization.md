@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: level1default
 permalink: /modeling-analysis/mvo/
 ---
 
