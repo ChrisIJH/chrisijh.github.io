@@ -7,7 +7,7 @@ Introduction
 ------------
 
 **_Value-At-Risk(VaR)_** is an important and effective risk measure. There are several ways to compute this. One famous
- method is Monte Carlo Simulation. However, it requires heavy computation. In this project, Apache Spark (with python) is
+ method is the one using Monte Carlo Simulation. However, it requires heavy computation. In this project, Apache Spark (with python) is
  used to compute the intraday VaR with yahoo historical 5 min data for example.  
 This project consists of 2 different jobs to implement of risk management by finding **_Value-At-Risk(VaR)_** 
 using 5-minute-tick-data with [Apache Spark][1]. One is data collecting job which is coded in _Java_. 
@@ -84,6 +84,13 @@ Usages
   - example:
   
     `% run GetVar.py`
+
+Algorithm
+---------
+
+Basic Alrgorithm is as below:
+
+![algo](https://www.evernote.com/shard/s9/sh/c7eeb72a-87f5-430b-9418-00c6c9b0319e/1766485dc5e07387873a0c0ec6bc651a/deep/0/Pasted-Image-1-20-15,-4-29-AM.png)  
 
 
 
