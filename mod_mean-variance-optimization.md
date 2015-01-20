@@ -24,12 +24,13 @@ information using Matlab then dump to excel using xlswrite function.
 
 Return Data is stored in this way from matlab.  
 ![data](https://www.evernote.com/shard/s9/sh/6f85072a-87c4-4c44-ba54-24a787918842/991a4b7fbaf53c8c07f38fb2d34d7fbf/deep/0/Windows-8.1---Parallels-Desktop.png)  
-Tab name is assumed to be "DATA"
+The worksheet name is "DATA" and data is names as "returnData".
 
-First step is to get the data size for preceding work. worksheet 'MV' is the workspace in this case.   
+#### Average returns and Standard Deviations  
 
+First step is to get the data size for preceding work. The worksheet 'MV' is the workspace in this case.   
 
-
+    'Step 1: Get the  number of Assets
     Set returnRange = Range("returnData")
     nofAssets = returnRange.Columns.Count
     
@@ -42,9 +43,204 @@ First step is to get the data size for preceding work. worksheet 'MV' is the wor
     ReDim arrMeanReturns(nofAssets)
     ReDim arrStds(nofAssets)
     
+    
+Then, find the size of the data.
+
     nofData = returnRange.Rows.Count  
     
+Next, read the symbols from "DATA" worksheet and write them on "MV" worksheet. 
+
+    'Step 3: locate the Assets in worksheet MV
+    'workshet MV "B5" vertically
+        'First read the Asset names
+    Worksheets("DATA").Activate
+    ActiveSheet.Range("A1").Select
+    For i = 1 To nofAssets
+        arrAssets(i - 1) = ActiveCell.Offset(0, i).Value
+    Next i
+        'Second write the assets names in worksheet MV
+    Worksheets("MV").Activate
+    ActiveSheet.Range("B4").Select
+    For i = 1 To nofAssets
+        ActiveCell.Offset(i, 0).Value = arrAssets(i - 1)
+    Next i
  
+Now, compute average returns and standard deviations.
+
+    'Step 4: Compute returns and stds
+    Worksheets("DATA").Activate
+    ActiveSheet.Range("returnData").Select
+    nofRows = Selection.Count() / nofAssets
+    'Another way of get the number of rows --> Selection.count() is rows * columns. So divide it by columbs to get # of rows
+    ReDim arrAllReturns(nofRows, nofAssets)
+        'Find the mean
+    ActiveSheet.Range("A1").Select
+    For j = 1 To nofAssets
+        Sum = 0
+        For i = 1 To nofRows
+            Sum = Sum + ActiveCell.Offset(i, j).Value
+        Next i
+        mean = Sum / nofRows
+        arrMeanReturns(j - 1) = mean
+    Next j
+    
+        'Find the Stds
+    For j = 1 To nofAssets
+        squareSum = 0
+        For i = 1 To nofRows
+            squareSum = squareSum + (ActiveCell.Offset(i, j).Value - arrMeanReturns(j - 1)) ^ 2
+        Next i
+        Std = Sqr(squareSum / (nofRows - 1))
+        arrStds(j - 1) = Std
+    Next j
+    
+Then, write the average returns and standard deviations.
+
+    'Step 5: Write the mean value from column "C5" for mean, from column "D5" for Stds vertically
+    Worksheets("MV").Activate
+    ActiveSheet.Range("C4").Select
+    For i = 1 To nofAssets
+        ActiveCell.Offset(i, 0).Value = arrMeanReturns(i - 1)
+        ActiveCell.Offset(i, 1).Value = arrStds(i - 1)
+    Next i
+    Range(ActiveCell.Offset(1, 0), ActiveCell.Offset(nofAssets, 0)).Name = "meanRet"
+
+#### Variance Covarianve Matrix, Solver, and Graph
+
+
+    'Find correlations and Covariance
+        'Create the 2 dim all data array
+
+    Worksheets("DATA").Activate
+    ActiveSheet.Range("A1").Select
+    
+    For i = 1 To nofAssets
+        For j = 1 To nofData
+            arrAllReturns(j - 1, i - 1) = ActiveCell.Offset(j, i).Value
+        Next j
+    Next i
+
+    For i = 1 To nofAssets ' columns
+        arrX = IJfuncTakeCol(arrAllReturns, i - 1)
+        For j = 1 To nofAssets
+            arrY = IJfuncTakeCol(arrAllReturns, j - 1)
+            arrCorrelations(i - 1, j - 1) = IJfuncCorrArr(arrX, arrY)
+            arrCov(i - 1, j - 1) = IJfuncCovArr(arrX, arrY)
+        Next j
+    Next i
+
+        'write  corr
+    Worksheets("MV").Activate
+    ActiveSheet.Range("F4").Select
+    For i = 1 To nofAssets ' row
+        For j = 1 To nofAssets ' column
+            ActiveCell.Offset(i, j).Value = arrCorrelations(i - 1, j - 1)
+        Next j
+    Next i
+    
+        'write Cov with Assets names
+    ActiveCell.Offset(nofAssets + 3, 0).Select
+    Selection.Value = "VCV"
+        ' vertically
+    For i = 1 To nofAssets
+        ActiveCell.Offset(i, 0).Value = arrAssets(i - 1)
+    Next i
+        ' horizontally
+    For i = 1 To nofAssets
+        ActiveCell.Offset(0, i).Value = arrAssets(i - 1)
+    Next i
+        ' write vcv
+    For i = 1 To nofAssets ' row
+        For j = 1 To nofAssets ' column
+            ActiveCell.Offset(i, j).Value = arrCov(i - 1, j - 1)
+        Next j
+    Next i
+    
+    Range(ActiveCell.Offset(1, 1), ActiveCell.Offset(nofAssets, nofAssets)).Name = "vcv"
+
+In order to find efficient frontier, solver is used. solver can be used this way in VBA.
+
+    'Efficient Frontier
+    ActiveCell.Offset(nofAssets + 3, 0).Select
+    Selection.Value = "Solver"
+    
+    Maxi = 0.035
+    Mini = Application.Max(WorksheetFunction.Min(arrMeanReturns), 0)
+    'Find mean returns and stds
+    n = 10 ' iteration number
+    interval = (Maxi - Mini) / n
+    ReDim weight(n)
+    ActiveCell.Offset(1, 0).Value = "Target Return"
+    'write asset names
+    For i = 1 To nofAssets
+        ActiveCell.Offset(i + 1, 0).Value = arrAssets(i - 1)
+    Next i
+    ActiveCell.Offset(nofAssets + 2, 0).Value = "Weight Sum"
+    ActiveCell.Offset(nofAssets + 3, 0).Value = "Exp Return"
+    ActiveCell.Offset(nofAssets + 4, 0).Value = "Std"
+    ActiveCell.Offset(nofAssets + 5, 0).Value = "Var"
+    
+    targetReturn = Mini
+    
+    'solver initialize
+    
+    ActiveCell.Offset(1, 1).Value = targetReturn
+    ActiveWorkbook.Names.Add Name:="targetRet", RefersTo:=ActiveCell.Offset(1, 1)
+        'write weight
+    For j = 2 To (nofAssets + 1)
+        ActiveCell.Offset(j, 1) = 1 / nofAssets
+    Next j
+    Range(ActiveCell.Offset(2, 1), ActiveCell.Offset(nofAssets + 1, 1)).Name = "w"
+    
+        'weight sum
+    ActiveCell.Offset(nofAssets + 2, 1).Formula = "=sum(w)"
+    ActiveWorkbook.Names.Add Name:="weightSum", RefersTo:=ActiveCell.Offset(nofAssets + 2, 1)
+        'Expected return
+    ActiveWorkbook.Names.Add Name:="expRet", RefersTo:=ActiveCell.Offset(nofAssets + 3, 1)
+    ActiveCell.Offset(nofAssets + 3, 1).Formula = "=sumproduct(w,meanRet)"
+    
+     'variance
+    ActiveCell.Offset(nofAssets + 5, 1).FormulaArray = "=MMULT(Transpose(w),MMULT(vcv,w))"
+    ActiveWorkbook.Names.Add Name:="var", RefersTo:=ActiveCell.Offset(nofAssets + 5, 1)
+    
+        'Std
+    ActiveCell.Offset(nofAssets + 4, 1).Formula = "=sqrt(var)"
+    ActiveWorkbook.Names.Add Name:="std", RefersTo:=ActiveCell.Offset(nofAssets + 4, 1)
+   
+       
+    
+    For i = 0 To n ' column side
+        ActiveCell.Offset(1, 1).Value = targetReturn
+        
+        Call IJmainSolver
+        
+        ActiveCell.Offset(1, i + 2) = targetReturn
+        'write weight
+        For j = 2 To (nofAssets + 1)
+            ActiveCell.Offset(j, i + 2) = ActiveCell.Offset(j, 1).Value
+        Next j
+       
+        'weight sum
+        ActiveCell.Offset(nofAssets + 2, i + 2).Formula = ActiveCell.Offset(nofAssets + 2, 1).Value
+        'Expected return
+        ActiveCell.Offset(nofAssets + 3, i + 2) = ActiveCell.Offset(nofAssets + 3, 1).Value
+        'Std
+        ActiveCell.Offset(nofAssets + 4, i + 2) = ActiveCell.Offset(nofAssets + 4, 1).Value
+        'variance
+        ActiveCell.Offset(nofAssets + 5, i + 2) = ActiveCell.Offset(nofAssets + 5, 1).Value
+        targetReturn = targetReturn + interval
+    Next i
+    
+Then, graph it.
+
+        'x-axis
+    Range(ActiveCell.Offset(nofAssets + 4, 2), ActiveCell.Offset(nofAssets + 4, n + 2)).Name = "xStd"
+        'y-axis
+    Range(ActiveCell.Offset(nofAssets + 3, 2), ActiveCell.Offset(nofAssets + 3, n + 2)).Name = "yExpRet"
+    
+    Call createChart
+    
+
 ### Result
  ![res](https://www.evernote.com/shard/s9/sh/5fc2ba11-fada-40c5-8503-e8c2108051a8/b6dcea9aa352729ce4aa59bcca6bab72/deep/0/mean_variance_auto_temp2---Excel.png)  
  
@@ -93,12 +289,14 @@ First step is to get the data size for preceding work. worksheet 'MV' is the wor
  ![com](https://ee54942d-a-62cb3a1a-s-sites.googlegroups.com/site/chrisijhwang/calendar/mvo/Windows%208.1%20-%20Parallels%20Desktop-3.jpg?attachauth=ANoY7croafu1bHY8XpQ5sRuwyqeLfbg-hkeXb9IXqXy_oXDm8G40vzOPXTQzZANmqKXzNPUV3aFalsCvaCVvbusAUCnJ_lfBFsm9RwFJ8I9Hge8ZzsRnTZjE7J_X1NW2e-Q2znRymypav7FVEl1AVD1hcKZqcw0Hnf8TsfUCL2I-jehby9MzEt5XvD45IyIouAAj_txbzGebHUcE4w0FcZVrKbbu5MQ9pHJ7CYkO8jUG0VBqukwNjrm7EwHqQ3w_Fy_gIPVnlPE9G3CAePLaArjmBdzaqz0REg%3D%3D&attredirects=0)  
  
  
+<hr>
 
 ## Matlab Implementation
 
  ![mat](https://www.evernote.com/shard/s9/sh/958f24ae-57eb-424a-a415-8d5db80dcac9/6218e537b681b0f5d6737add6585c7a7/deep/0/Editor---Z--Documents-Dev-Matlab-Mathworks-portfoliodemo-MVO_forweb.m.png)  
  ![gra](https://www.evernote.com/shard/s9/sh/55acb1e8-1d9d-4b34-954e-16a686c8fe33/2e1011a3a42f1d6d3a32b1626afcf29e/deep/0/-Student-Version--Figure-3.png)  
  
+<hr>
 ## Python Implementation
 
     __author__ = 'hwang'
