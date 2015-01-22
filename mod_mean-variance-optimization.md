@@ -374,7 +374,7 @@ Numpy and pandas is used. Expecially, cvxopt is used for linear programming.
     plt.show()
     
     
- ![mat](https://ee54942d-a-62cb3a1a-s-sites.googlegroups.com/site/chrisijhwang/calendar/mvo/Figure%201-3.jpg?attachauth=ANoY7co6UXaBF4Lb60SWmWBdZfeZHCvoiYM8fNTqWuICeeq5Ns_2mRf6kPp0p_3xNKKL98chK9A66I851MXI2BG_lZQHMp0Yv6ipSjjBcZBOi0Cv73ex7vOwtwqixr2iRvcogNrOWHE1HzFjQ2W4VwB2gmMcMg5Sa-Q6Er-2hxMqKJ-_AiQY6owOCPKOsXIrTRRiIhnL3bTffhjKuA3k3i46j64BlkvLoU8B8kHoV4pOEW9jxa56Sf4%3D&attredirects=0)  
+ ![mat](https://www.evernote.com/shard/s9/sh/7bf97785-0e91-43f0-835a-515f51741407/f2051103810c3cb9e69959add7f76668/deep/0/Pasted-Image-1-22-15,-10-23-AM.png)  
  
  
  
