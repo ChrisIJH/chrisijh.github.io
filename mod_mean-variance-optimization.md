@@ -288,6 +288,7 @@ Then, graph it.
 
  ![com](https://ee54942d-a-62cb3a1a-s-sites.googlegroups.com/site/chrisijhwang/calendar/mvo/Windows%208.1%20-%20Parallels%20Desktop-3.jpg?attachauth=ANoY7croafu1bHY8XpQ5sRuwyqeLfbg-hkeXb9IXqXy_oXDm8G40vzOPXTQzZANmqKXzNPUV3aFalsCvaCVvbusAUCnJ_lfBFsm9RwFJ8I9Hge8ZzsRnTZjE7J_X1NW2e-Q2znRymypav7FVEl1AVD1hcKZqcw0Hnf8TsfUCL2I-jehby9MzEt5XvD45IyIouAAj_txbzGebHUcE4w0FcZVrKbbu5MQ9pHJ7CYkO8jUG0VBqukwNjrm7EwHqQ3w_Fy_gIPVnlPE9G3CAePLaArjmBdzaqz0REg%3D%3D&attredirects=0)  
  
+  ![mat](https://www.evernote.com/shard/s9/sh/7bf97785-0e91-43f0-835a-515f51741407/f2051103810c3cb9e69959add7f76668/deep/0/Pasted-Image-1-22-15,-10-23-AM.png)  
  
 <hr>
 
@@ -374,7 +375,7 @@ Numpy and pandas is used. Expecially, cvxopt is used for linear programming.
     plt.show()
     
     
- ![mat](https://www.evernote.com/shard/s9/sh/7bf97785-0e91-43f0-835a-515f51741407/f2051103810c3cb9e69959add7f76668/deep/0/Pasted-Image-1-22-15,-10-23-AM.png)  
+
  
  
  
