@@ -17,12 +17,12 @@ We can treat this as a method of reverse engineering in a sense that it shows th
 In this page, I analyze Vanaguard Large-Cap ETF (VV) which tracks crsp indexes.
 
 Style fators are:  
-
+<!--
   * CRSP US Large Cap Growth Index (^CRSPLCG1)
   * CRSP US Large Cap Value Index (^CRSPLCV1)
   * CRSP US Small Cap Growth Index (^CRSPSCG1)
   * CRSP US Small Cap Value Index (^CRSPSCV1)  
-  
+ --> 
 ## Methodology
 
 Since style attribution analysis starts from Multi Factor Model, we need to consider the below:  
@@ -36,15 +36,6 @@ Sharpe suggested finding the weight of each style by minimizing the tracking err
 
   ![d](http://latex.codecogs.com/gif.latex?%5Cmathbf%7B%5Cepsilon%7D%20%3D%20%5Cmathbf%7BY-X%5Cbeta%7D)  
   
-   $$
-   \begin{align*}
-   x_i
-   \end{align*}
-   $$
-<hr>
-
-
-
 
 
 >#### References:
