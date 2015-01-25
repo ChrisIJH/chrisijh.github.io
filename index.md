@@ -19,6 +19,7 @@ layout: default
             <h3><a href="{{ base_url }}/modeling-analysis/crsp-index/">Understanding CRSP indexes</a></h3>
         </div>
      </div>
+     <!--
      <div class="col-1-1">
         <div class="content">
             <h3><a href="{{ base_url }}/modeling-analysis/factor-model-1/">Factor Model</a></h3>
@@ -29,6 +30,7 @@ layout: default
             <h3><a href="{{ base_url }}/modeling-analysis/style-attribution-analysis/">Style Attribution Analysis</a></h3>
         </div>
      </div>
+     -->
      <div class="col-1-1">
         <div class="content">
             <h3><a href="{{ base_url }}/modeling-analysis/mvo/">Mean Variance Optimization examples(VBA, Python, Matlab)</a></h3>
