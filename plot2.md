@@ -13,3 +13,5 @@ achieve this goal, we are focusing on the investor's view part of the model whic
 
 ![pv](https://www.evernote.com/shard/s9/sh/2de563ad-d486-4f0f-8011-477451aa84e2/2b0d9aaee675b3e52412a7030a8db036/deep/0/Project-View.png)  
 
+In plot 2, we are constructing portfolio using Black-Litterman framework including more reliable investor's view.
+
