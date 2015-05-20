@@ -11,18 +11,22 @@ permalink: /quantitative-finance/linear-regression/
 
 
 ### Simple Linear Regression Example from Alexander(2008)
+ 
 
+#### Excel 
 The excel implementation is introduced in the book. The result will be similar to the following:
 
 
 ![alt text](https://www.evernote.com/shard/s9/sh/57961f26-5016-4d12-9946-cb75344093c2/3d81ec1e471a9a24a02b4e31ef166e29/deep/0/alexander_linear_regression.png "Alexander linear Reg ")
 
-If it is implemented with matlab, it will be the following:
+#### Matlab
+
+The book contains only excel implementation. If it is implemented with **matlab**, it will be similar to the following:
 
 <pre>
 clear;
 clc;
-[num, txt] = xlsread('I.4.2.7.xlsx', 'Sheet2');
+[num, txt] = xlsread('file', 'SheetName');
 
 %% clean data
 txtday = txt(2:end, 1);
@@ -65,6 +69,9 @@ text(-0.02,0.6, ['y= ' , num2str(cfs(2)), 'x + ', num2str(cfs(1)), ', R^2 = ', n
 
 ![alt text](https://www.evernote.com/shard/s9/sh/097de607-95cc-4bbe-8dee-7a4cb718dd2a/d38b833ed46c612fe80f1e7fe9051f65/deep/0/matlab_graph_lr.png "graph")
 
+#### R
+
+R
 
 
 
