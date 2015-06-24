@@ -4,14 +4,17 @@ layout: default
 
 # Contents 
 
+
+
+<hr>
+
 <div class="grid grid-pad">
     <div class="col-1-1">
        <div class="content">
-           <h2><font color="Grey">Quantitative Finance</font></h2>
+           <h2><font color="Grey">Quantitative Finance Modeling and Analysis</font></h2>
        </div>
     </div>
 </div>
-
 <div class="grid grid-pad">
     <div class="col-1-1">
         <div class="content">
@@ -20,21 +23,6 @@ layout: default
      </div>
 </div>
 
-
-
-
-
-
-<hr>
-
-<div class="grid grid-pad">
-    <div class="col-1-1">
-       <div class="content">
-           <h2><font color="Grey">Modeling and Analysis</font></h2>
-       </div>
-    </div>
-</div>
-<div class="grid grid-pad">
     <div class="col-1-1">
         <div class="content">
             <h3><a href="{{ base_url }}/modeling-analysis/crsp-index/">Understanding CRSP indexes</a></h3>

@@ -73,7 +73,79 @@ text(-0.02,0.6, ['y= ' , num2str(cfs(2)), 'x + ', num2str(cfs(1)), ', R^2 = ', n
 <hr>
 #### R
 
-R
+<pre>
+# Simple linear regression
+
+# Data read from excel file
+library(gdata)
+data = read.xls("Filename", sheet = 2, header = TRUE) 
+
+# See how it looks
+names(data)
+attach(data)
+layout(1)
+plot(SP500, Amex)
+
+# Subsetting data
+tickers = c("Amex", "SP500")
+prices = data[tickers] 
+
+returns = data.frame(diff(as.matrix(log(prices))))
+
+
+# Regression
+L1 = lm(returns$Amex ~ returns$SP500)
+summary(L1)
+
+# graph
+plot(returns$Amex ~ returns$SP500)
+abline(L1, col="red")
+
+</pre>
+![alt text](https://www.evernote.com/l/AAlOZAYF7HJOLaMEAPgrr4GM5diV3BHlSXEB/image.png "R result")
+![alt text](https://www.evernote.com/l/AAkJL9M7ak1Pf5XnREynXPsoXkAFnGC007QB/image.png "R Summary")
+
+<hr>
+#### Python
+
+## Method 1: scipy stats linregress
+<pre>
+import numpy as np
+from scipy import stats
+import pandas as pd
+
+dts = pd.read_excel('filep path', 'Sheet2', index_col=0)
+log_dts = np.log(dts)
+
+log_rts = log_dts[1:].values-log_dts[:-1]
+slope, intercept, r_value, p_value, std_err = stats.linregress( log_rts["SP500"], log_rts["Amex"])
+print slope
+print intercept
+print "r-squared:", r_value**2
+print "std error:", std_err
+degrees_of_freedom = len(log_rts)-2
+predict_y = intercept + slope*log_rts["Amex"]
+pred_error = log_rts["SP500"] - predict_y
+residual_std_error = np.sqrt(np.sum(pred_error**2)/degrees_of_freedom)
+
+</pre>
+
+## Method 2: pandas OLS
+<pre>
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
+y = log_rts.Amex  # response
+X = log_rts.SP500 # predictor
+X = sm.add_constant(X) # Adds a constant term to the predictor
+est = sm.OLS(y, X)
+est = est.fit()
+est.summary()
+</pre>
+<p>The summary result shows :</p>
+![alt text](https://www.evernote.com/l/AAlNvSq5qbpJQa7s-oojrE86GrPfEtVIolsB/image.png "Python OLS result")
+
 
 
 
