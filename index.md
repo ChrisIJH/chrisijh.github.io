@@ -21,7 +21,6 @@ layout: default
             <h3><a href="{{ base_url }}/quantitative-finance/linear-regression/">Basic Linear Regression</a></h3>
         </div>
      </div>
-</div>
 
     <div class="col-1-1">
         <div class="content">
