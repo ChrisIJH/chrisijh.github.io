@@ -1,6 +1,6 @@
 ---
 layout: level1default 
-permalink: /quantitative-finance/linear-regression/
+permalink: /modeling-analysis/linear-regression/
 ---
 
 # Simple Linear Regression
