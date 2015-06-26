@@ -67,10 +67,23 @@ layout: default
             <h3><a href="{{ base_url }}/bigdata/spark-var/">Value at Risk on Apache Spark</a></h3>
         </div>
      </div> 
-     
-     
 </div>
+<hr>
 
+<div class="grid grid-pad">
+    <div class="col-1-1">
+       <div class="content">
+           <h2><font color="Grey">Data Science/Machine Learning Related</font></h2>
+       </div>
+    </div>
+</div>
+<div class="grid grid-pad">
+    <div class="col-1-1">
+        <div class="content">
+            <h3><a href="{{base_url}}/bigdata/twitter-analysis">Twitter Analysis</a></h3>
+        </div>
+     </div>
+</div>
 <hr>
 
 <div class="grid grid-pad">
