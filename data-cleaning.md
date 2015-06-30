@@ -1,23 +1,13 @@
 ---
 layout: level1default
-permalink: /bigdata/twitter-analysis/
+permalink: /bigdata/data-cleaning/
 ---
 
 Introduction
 ------------
 
-**_Twitter_** 
-
-[1]: http://spark.apache.org
-[2]: http://spark.apache.org/docs/1.0.2/api/python/index.html
-[3]: https://cloud.google.com
-[4]: https://hadoop.apache.org
-
-
-Overview
-------
-
-<div class="piktowrapper-embed" pikto-uid="6792262-twit_ana" >
+## Data Clean
+<div class="piktowrapper-embed" pikto-uid="6835991-data_clean" >
     <div class="pikto-canvas-wrap">
         <div class="pikto-canvas"></div>
     </div>
@@ -31,6 +21,10 @@ Overview
         ref.parentNode.insertBefore(js, ref);
     }(document));
 </script>
+
+
+
+## 
 
 
 

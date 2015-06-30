@@ -80,6 +80,20 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-1">
         <div class="content">
+            <h3><a href="{{base_url}}/bigdata/natural-language-processing">Natural Language Processing 1</a></h3>
+        </div>
+     </div>
+</div>
+<div class="grid grid-pad">
+    <div class="col-1-1">
+        <div class="content">
+            <h3><a href="{{base_url}}/bigdata/data-cleaning">Data Cleaning</a></h3>
+        </div>
+     </div>
+</div>
+<div class="grid grid-pad">
+    <div class="col-1-1">
+        <div class="content">
             <h3><a href="{{base_url}}/bigdata/twitter-analysis">Twitter Analysis w/ NLP</a></h3>
         </div>
      </div>
