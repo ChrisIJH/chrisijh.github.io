@@ -1,19 +1,19 @@
----
-layout: level1default
-permalink: /analytic_notable/
----
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.layout.cloud.js"></script>
 
-# Test Analytics 1
 
 <script>
 	(function () {
 	var fill = d3.scale.category20();
 	var data=[];
 
-	d3.csv("output.csv", function(w) {
+	d3.csv("../output.csv", function(w) {
 
 		w.forEach( function (d) {
-			data.push( {word: d[0], freq: d[1]});
+			data.push( {word: d[1], freq: d[0]});
 		});
 	});
 
@@ -47,5 +47,4 @@ permalink: /analytic_notable/
 	 }
 })();
 </script>
-
 

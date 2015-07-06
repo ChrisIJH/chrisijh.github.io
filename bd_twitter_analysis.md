@@ -128,6 +128,14 @@ Overview
                     else:
                         i +=1
 
+        def elim_dash(docs):
+            for j, line in enumerate(docs):
+                for i, w in enumerate(line):
+                    if w.startswith("-") or w.endswith("-"):
+                        line[i] = w.replace("-", "")
+                    else:
+                        line[i] = w.replace("-", " ")
+
         def find_not(docs):
             # Apostrophe
             i=0
@@ -177,13 +185,9 @@ Now, Use apply map and reduce to Spark RDD.
     count_map_rev = counts_map.map(lambda (x,y): (y,x))
 
 ## Visualization
-Using D3.js, write the result to output.csv file. 
+Using Tableau public, I made simple report for the popular words collected from twitter.
 
-    top_50 = count_map_rev.top(50)
-    with open("output.csv", "w") as f:
-    for line in top_50:
-        s = str(line) + '\n'
-        f.write(s)
+<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 654px; height: 742px;'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularWords&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='654' height='742' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='PopularWords&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularWords&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
 
 
 References:
