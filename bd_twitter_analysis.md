@@ -60,97 +60,101 @@ Overview
             real_text = line['text']
             tobe_parallelized.append(real_text)
 
+(Cf.)
+
+      db.tweets.delete_many( {} ) # delete all ROWS(DOCUMENT) 
+
     2.a. Spark
 
         data_raw = sc.parallelize(tobe_parallelized)
 
 3. Data Cleaning
 
-        def split_lines(docs):
-            result = []
-            for line in docs:
-                a = line.split()
-                result.append(a)
-            return result
+      def split_lines(docs):
+          result = []
+          for line in docs:
+              a = line.split()
+              result.append(a)
+          return result
 
-        def to_lowr(docs):
-            i=0
-            for words in docs:
-                docs[i] = [w.lower() for w in words]
-                i +=1
+      def to_lowr(docs):
+          i=0
+          for words in docs:
+              docs[i] = [w.lower() for w in words]
+              i +=1
 
-        # sample
-        [u'Novel writing tips- Eric J Gates http://t.co/Doz5HUxSlS',
-         u'Bitches love writing r.i.p \U0001f629\U0001f629\U0001f629 they jus want act like they kno ppl',
-         u"Anchorage AK - Tutor or Teacher - Elementary K-6th - I'm interested in finding a tutor for my son who will be ... http://t.co/lxIJSguo9m"]
+      # sample
+      [u'Novel writing tips- Eric J Gates http://t.co/Doz5HUxSlS',
+       u'Bitches love writing r.i.p \U0001f629\U0001f629\U0001f629 they jus want act like they kno ppl',
+       u"Anchorage AK - Tutor or Teacher - Elementary K-6th - I'm interested in finding a tutor for my son who will be ... http://t.co/lxIJSguo9m"]
 
-        def elim_url(line):
-            for lstOfWords in tmp:
-                i=0
-                for word in lstOfWords:
-                    if word.find("http")!= -1:
-                        lstOfWords.pop(i)
-                        # since one is popped, need to maintain i as same as before
-                    else:
-                        i +=1
+      def elim_url(line):
+          for lstOfWords in tmp:
+              i=0
+              for word in lstOfWords:
+                  if word.find("http")!= -1:
+                      lstOfWords.pop(i)
+                      # since one is popped, need to maintain i as same as before
+                  else:
+                      i +=1
 
-        # sample
-        [ [u'Novel', u'writing', u'tips-', u'Eric', u'J', u'Gates'],
-          [u'Bitches',
-          u'love',
-          u'writing',
-          u'r.i.p',
-          u'\U0001f629\U0001f629\U0001f629',
-          u'they',
-          u'jus',
-          u'want',
-          u'act',
-          u'like',
-          u'they',
-          u'kno',
-          u'ppl'] ]
+      # sample
+      [ [u'Novel', u'writing', u'tips-', u'Eric', u'J', u'Gates'],
+        [u'Bitches',
+        u'love',
+        u'writing',
+        u'r.i.p',
+        u'\U0001f629\U0001f629\U0001f629',
+        u'they',
+        u'jus',
+        u'want',
+        u'act',
+        u'like',
+        u'they',
+        u'kno',
+        u'ppl'] ]
 
-        def elim_at(line):
-            for lstOfWords in line:
-                i=0
-                for word in lstOfWords:
-                    if word.startswith("@"):
-                        lstOfWords.pop(i)
-                    i +=1
+      def elim_at(line):
+          for lstOfWords in line:
+              i=0
+              for word in lstOfWords:
+                  if word.startswith("@"):
+                      lstOfWords.pop(i)
+                  i +=1
 
-        def elim_hash(line):
-            for lstOfWords in line:
-                i=0
-                for word in lstOfWords:
-                    if word.startswith("#"):
-                        lstOfWords.pop(i)
-                        # since one is popped, need to maintain i as same as before
-                    else:
-                        i +=1
+      def elim_hash(line):
+          for lstOfWords in line:
+              i=0
+              for word in lstOfWords:
+                  if word.startswith("#"):
+                      lstOfWords.pop(i)
+                      # since one is popped, need to maintain i as same as before
+                  else:
+                      i +=1
 
-        def elim_dash(docs):
-            for j, line in enumerate(docs):
-                for i, w in enumerate(line):
-                    if w.startswith("-") or w.endswith("-"):
-                        line[i] = w.replace("-", "")
-                    else:
-                        line[i] = w.replace("-", " ")
+      def elim_dash(docs):
+          for j, line in enumerate(docs):
+              for i, w in enumerate(line):
+                  if w.startswith("-") or w.endswith("-"):
+                      line[i] = w.replace("-", "")
+                  else:
+                      line[i] = w.replace("-", " ")
 
-        def find_not(docs):
-            # Apostrophe
-            i=0
-            for listOfWords in docs:
-                docs[i] = [ "not" if word.find("'t")!=-1 else word for word in listOfWords]
-                i += 1
+      def find_not(docs):
+          # Apostrophe
+          i=0
+          for listOfWords in docs:
+              docs[i] = [ "not" if word.find("'t")!=-1 else word for word in listOfWords]
+              i += 1
 
 
-        def stop_word(doc):
-            stopset = set(nltk.corpus.stopwords.words('english'))
-            filter_stops = lambda a: len(a) < 3 or a in stopset
-            for lstOfWords in doc:
-                for word in lstOfWords:
-                    if filter_stops(word):
-                        lstOfWords.remove(word)
+      def stop_word(doc):
+          stopset = set(nltk.corpus.stopwords.words('english'))
+          filter_stops = lambda a: len(a) < 3 or a in stopset
+          for lstOfWords in doc:
+              for word in lstOfWords:
+                  if filter_stops(word):
+                      lstOfWords.remove(word)
 
 ## Analysis
 In this case, the current python list looks like the following:  
