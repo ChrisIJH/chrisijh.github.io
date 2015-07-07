@@ -6,8 +6,8 @@ permalink: /bigdata/natural-language-processing/
 Introduction
 ------------
 
-## Corpus
-It is a large body of text. It is usually processed and labeled text which means it may have additional information.
+
+
 
 
 ## 

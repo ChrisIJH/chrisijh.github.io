@@ -156,6 +156,7 @@ Overview
                   if filter_stops(word):
                       lstOfWords.remove(word)
 
+
 ## Analysis
 In this case, the current python list looks like the following:  
         
