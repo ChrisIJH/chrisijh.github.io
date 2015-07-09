@@ -28,7 +28,7 @@ layout: default
 <div class="grid grid-pad">
     <div class="col-1-1">
        <div class="content">
-           <h2><font color="Grey">Quantitative Finance< br>Modeling and Analysis</font></h2>
+           <h2><font color="Grey">Quantitative Finance Modeling and Analysis</font></h2>
        </div>
     </div>
 </div>
