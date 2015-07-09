@@ -6,12 +6,8 @@ permalink: /bigdata/twitter-analysis/
 Introduction
 ------------
 
-**_Twitter_** 
+**_Twitter_** Analysis
 
-[1]: http://spark.apache.org
-[2]: http://spark.apache.org/docs/1.0.2/api/python/index.html
-[3]: https://cloud.google.com
-[4]: https://hadoop.apache.org
 
 
 Overview
@@ -234,9 +230,9 @@ for line in top_100:
 Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.
 : org.apache.spark.SparkException: Job aborted due to stage failure: Serialized task 4:0 was 17505618 bytes, which exceeds max allowed: spark.akka.frameSize (10485760 bytes) - reserved (204800 bytes). Consider increasing spark.akka.frameSize or using broadcast variables for large values.
 </code></pre>
-Check https://spark.apache.org/docs/latest/configuration.html
+Check https://spark.apache.org/docs/latest/configuration.html  
 ADVANCED: DEVOPS WITH APACHE SPARK WORKSHOP from 2015 Spark summit
-()
+()  
 
 ## Visualization
 Using Tableau public, I made simple report for the popular words collected from twitter.
