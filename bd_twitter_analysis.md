@@ -232,7 +232,14 @@ Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.Pyt
 </code></pre>
 Check https://spark.apache.org/docs/latest/configuration.html  
 ADVANCED: DEVOPS WITH APACHE SPARK WORKSHOP from 2015 Spark summit
-()  
+() 
+
+- solution 1.  
+change parameter in conf/spark-defaults.conf
+<pre><code>
+spark.akka.frameSize  20 # 10 is the default value
+</code></pre>
+
 
 ## Visualization
 Using Tableau public, I made simple report for the popular words collected from twitter.
