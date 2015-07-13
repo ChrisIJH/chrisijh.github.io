@@ -23,6 +23,7 @@ Style fators are:
   * CRSP US Small Cap Growth Index (^CRSPSCG1)
   * CRSP US Small Cap Value Index (^CRSPSCV1)  
  --> 
+ 
 ## Methodology
 
 Since style attribution analysis starts from Multi Factor Model, we need to consider the below:  
@@ -37,10 +38,11 @@ Sharpe suggested finding the weight of each style by minimizing the tracking err
   ![d](http://latex.codecogs.com/gif.latex?%5Cmathbf%7B%5Cepsilon%7D%20%3D%20%5Cmathbf%7BY-X%5Cbeta%7D)  
   
 
-
->#### References:
-  >[1] Alexander, Carol. Market Risk Analysis. Vol. II. Chichester, England: Wiley, 2008. Print.  
-  >[2] Jackson, Mary, and Staunton Mike, Advanced Modelling in Finance using Excel and VBA, Chichester, England: Wiley, 2001. Print.  
-  >[3] Coggin, T. Daniel., and Frank J. Fabozzi. Handbook of Equity Style Management. Hoboken, NJ: Wiley, 2003. Print.  
+<blockquote>
+<h4 id="references">References:</h4>
+<p>[1] Alexander, Carol. Market Risk Analysis. Vol. II. Chichester, England: Wiley, 2008. Print.  </p>
+>[2] Jackson, Mary, and Staunton Mike, Advanced Modelling in Finance using Excel and VBA, Chichester, England: Wiley, 2001. Print.  
+>[3] Coggin, T. Daniel., and Frank J. Fabozzi. Handbook of Equity Style Management. Hoboken, NJ: Wiley, 2003. Print.  
+</blockquote>
 
 
