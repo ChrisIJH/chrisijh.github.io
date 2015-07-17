@@ -59,7 +59,7 @@ blockquote {
 
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-  color:#333;
+  /*color:#333; */
   font-size:12px;
 }
 
@@ -372,4 +372,14 @@ nav ul a {
  border-radius: 1000px;
  background: #8f8f8f;
  display: block;
+}
+
+
+/*  for visiblity by Chris IJ H */
+
+.light {
+  color: #9F0808;
+}
+.dark{
+  color: #09337D;
 }

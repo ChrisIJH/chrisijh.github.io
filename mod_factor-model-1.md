@@ -2,9 +2,32 @@
 layout: level1default 
 permalink: /modeling-analysis/factor-model-1/
 ---
-# Multifactor Model
 
-## Introduction
+#  Factor Model
+
+**Factor Models** are applied to analyze the potential retursn on a portfolio of risky assets to choose the **optimal allocation** of ther funds to different assets and to measure the **portfolio risk**.
+
+
+
+<hr>
+
+### Risk Decomposition 
+- Assumption:
+<pre><code>The bnechmark or index is  
+uncorrelated with  
+the specific returns on a potfolio
+</code></pre>
+This is a strong restriction. Without the ristriction, factor model is simply a definition of the residuals.
+
+So, the restrictions on residuals :
+
+1.) $$E(\varepsilon) = 0$$  
+2.) Mutually uncorrelated  
+3.) Uncorrelated with factors  
+4.) $$\varepsilon$$ is i.i.d.  
+
+$$ note^*$$ number 4. is acutally not a restriction. It just shows how samples are distributed.
+
 
 <div class="piktowrapper-embed" pikto-uid="6938336-ii-1-3factors" >
     <div class="pikto-canvas-wrap">
@@ -21,11 +44,9 @@ permalink: /modeling-analysis/factor-model-1/
     }(document));
 </script>
 
-<hr>
-## Static Factor Model
-<hr>
-## Dynamic Factor Model
-N varialbles  
+## Brief view
+
+N varialbles   
 K factors  
 
 $$X_{it} = \alpha_i + \sum_{j=1}^K \beta_{ij}f_{jt} + \varepsilon_{it}$$  
@@ -44,8 +65,6 @@ $$X = FB' + E$$
 
 (ex: N=4 va, K=5)  
 <img src="https://www.evernote.com/l/AAmnmZqWDX9I9ZewEvlKqD2WRtpzkpZhIQMB/image.png">  
-
-
 
 
 <blockquote>
