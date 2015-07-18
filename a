@@ -1,0 +1,34 @@
+---
+layout: level1default 
+permalink: /reference/ref_datastructure_04/
+---
+
+<h1>Sorting</h1>
+
+
+<h2>Sequantial Search</h2>
+
+<p>If list is unordered, the number of comparison is</p>
+<p>Worst case = n</p>
+<p>Best case = 1</p>
+<p>Average = n/2</p>
+<br>
+
+
+
+<h2>Binary Search</h2>
+
+<p>To analyze the binary search algorithm, we need to recall that each comparison eliminates about half of the remaining items from consideration. What is the maximum number of comparisons this algorithm will require to check the entire list? If we start with n items, about $\frac{n}{2}$ items will be left after the first comparison. After the second comparison, there will be about $\frac{n}{4}$, Then \(\frac{n}{8}\), $\frac{n}{16}$, and so on. How many times can we split the list? Table 3 helps us to see the answer.</p>
+
+<img src="https://www.evernote.com/shard/s9/sh/e3a69ac6-1742-4c88-8915-faaccd1356a3/4321c7b78683e2b27818ac771f5ce4ad/deep/0/The-Binary-Search---Problem-Solving-with-Algorithms-and-Data-Structures.png">
+<img src="https://www.evernote.com/l/AAnKFgTB189L166_AZB3-Jc9pg0kMAvbPeQB/image.png">
+
+
+<h2>Hashing</h2>
+<p><strong>A hash table<strong> is a collection of items which are stored in such a way as to make it easy to find them later. Each position of the hash table, often called a slot, can hold an item and is named by an integer value starting at 0. For example, we will have a slot named 0, a slot named 1, a slot named 2, and so on. <strong>Initially, the hash table contains no items<strong> so every slot is empty. We can <strong>implement a hash table by using a list with each element initialized to the special Python value None.<strong> Figure 4 shows a hash table of size m=11. In other words, there are m slots in the table, named 0 through 10.</p>
+![asdfa](https://www.evernote.com/shard/s9/sh/4ba6863a-5a3a-4e16-ac4a-f1a99628f336/ec55378f51811e5757504605d580659e/deep/0/Hashing---Problem-Solving-with-Algorithms-and-Data-Structures.png)
+<p>The mapping between an item and the slot where that item belongs in the hash table is called the <strong>hash function.<strong> The hash function will take any item in the collection and return an integer in the range of slot names, between 0 and m-1. Assume that we have the set of integer items 54, 26, 93, 17, 77, and 31. Our first hash function, sometimes referred to as the <strong>“remainder method,”<strong> simply <strong>takes an item and divides it by the table size, returning the remainder as its hash value (h(item)=item%11)<strong>. Table 4 gives all of the hash values for our example items. Note that this remainder method (modulo arithmetic) will typically be present in some form in all hash functions, since the result must be in the range of slot names.
+
+![sadsf](https://www.evernote.com/shard/s9/sh/eb69813b-adcf-4b3a-bd46-c04bebd0557d/685b7061bfd511704873c4258a1981cc/deep/0/Hashing---Problem-Solving-with-Algorithms-and-Data-Structures.png)
+
+Once the hash values have been computed, we can <strong>insert each item into the hash table at the designated position<strong> as shown in Figure 5. Note that <strong>6 of the 11 slots are now occupied.<strong> This is referred to as the <strong>load factor<strong>, and is commonly denoted by $\lambda=\frac{numberofitems}{tablesize}$. For this example, $\lambda = \frac{6}{11}$.</p>

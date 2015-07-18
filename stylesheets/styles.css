@@ -383,3 +383,8 @@ nav ul a {
 .dark{
   color: #09337D;
 }
+
+mark {
+  background-color: yellow;
+  color: black;
+}
