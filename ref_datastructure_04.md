@@ -81,4 +81,14 @@ it is possible to perform simultaneous assignment. The statement <strong>a,b=b,a
 <p>That is, it is $O(n\log{n})$</p>
 </div>
 
+
+<div  class="light">
+
+<ul>
+	<li>divide and conquer</li>
+	<li>same advantage as merge sort, but without additional storage</li>
+	<li>Select a value, called the <strong>pivot value</strong></li>
+	<li>Many different way of choosing pivot value, to assist with splitting the list.</li>
+	<li>split point:  the actual point where the pivot value belongs in the final sorted list.</li>
+</ul>
 </div>
