@@ -2,6 +2,15 @@
 layout: level1default 
 permalink: /reference/ref_datastructure_04/
 ---
+<h1>Analysis</h1>
+
+<ul>
+	<li>Big $\Omega(n)$ : asymptotic lower bound. If $T(n)$ is $\Omega(f(n))$, from a certain point $x_0$, there is a contat $c$ that $T(n) >= c * f(n)$ </li>
+	<li>Big $O(n)$ : asymtotic upper bound.</li>
+	<li>Big $\Theta(n)$ : asymtotic lower and upper bound.</li>
+</ul>
+<p>For example, merge sort complexity is between $O(n\log(n))$ and $O(n^2)$. Can say $\Theta(n\log(n))$ but cannot say $\Theta(n^2)$because it's $\Omega(n\log(n))$ not $\Omega(n^2)$</p>
+<p>Selection sort is always $O(n^2)$ while Insertion sort is $O(n)$ at best, $O(n^2)$ at worst. So we can can say that selection sort is $\Theta(n^2)$ because it is a lower bound too. But cannot say that Insertion Sort is $\Theta(n^2)$ because it is $\Omega(n)$</p>
 
 <h1>Sorting</h1>
 
@@ -79,16 +88,7 @@ it is possible to perform simultaneous assignment. The statement <strong>a,b=b,a
 	<li>Second step, merge results in a list of size n requires n operations.</li>
 </ul>
 <p>That is, it is $O(n\log{n})$</p>
+<p>Merge sort, there should be two (left-right) memory spaces to create entirely new arrays.. That is different from bubble, insertion, selection which don't need extra memory spaces.</p>
 </div>
 
-
-<div  class="light">
-
-<ul>
-	<li>divide and conquer</li>
-	<li>same advantage as merge sort, but without additional storage</li>
-	<li>Select a value, called the <strong>pivot value</strong></li>
-	<li>Many different way of choosing pivot value, to assist with splitting the list.</li>
-	<li>split point:  the actual point where the pivot value belongs in the final sorted list.</li>
-</ul>
 </div>

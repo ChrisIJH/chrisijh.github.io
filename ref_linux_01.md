@@ -165,6 +165,10 @@ $ grep -r unix .
 ./b:this is line 4 unix unix
 
 </code></pre>
+Print 3 lines before, 2 lines after term "unix".
+<pre>
+$ grep -B 3 -A 2 unix .
+</pre>
 </div>
 
 <hr>
