@@ -82,3 +82,86 @@ if(isset($_POST['submit'])) {
 <h3>From MongoDB</h3>
 
 </div> <!-- light -->
+
+
+<div class="dark">
+
+<h3>Authentication</h3>
+<p>http://docs.mongodb.org/master/MongoDB-security-guide.pdf</p>
+
+<ol>
+    <li>Start without authentication.
+    <pre>$ sudo service mongod start</pre>
+    Check if it started correctly.
+    <pre>2015-07-27T21:12:20.253+0000 D INDEX    [initandlisten] checking complete
+2015-07-27T21:12:20.253+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-07-27T21:12:20.253+0000 D COMMAND  [PeriodicTaskRunner] BackgroundJob starting: PeriodicTaskRunner
+2015-07-27T21:12:20.253+0000 D COMMAND  [ClientCursorMonitor] BackgroundJob starting: ClientCursorMonitor
+2015-07-27T21:12:20.253+0000 D COMMAND  [TTLMonitor] BackgroundJob starting: TTLMonitor
+2015-07-27T21:13:20.227+0000 I STORAGE  [DataFileSync] flushing mmaps took 0ms  for 8 files</pre></li>
+    <li>Create Adminisgtrative  user first. (initially under localexception) The following operations will create two users: <mark>a user administrator</mark> that will be able to create and modify users (siteUserAdmin), and <mark>a root user (siteRootAdmin)</mark> that you will use to complete the remainder of the tutorial
+
+        <pre>
+mongo
+> use admin
+> db.createUser( {
+    user: "siteUserAdmin",
+    pwd: "password",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  });
+  Successfully added user: {
+    "user" : "siteUserAdmin",
+    "roles" : [
+        {
+            "role" : "userAdminAnyDatabase",
+            "db" : "admin"
+        }
+    ]
+}
+</pre>
+        <pre>db.createUser( {
+    user: "siteRootAdmin",
+    pwd: "password",
+    roles: [ { role: "root", db: "admin" } ]
+});
+Successfully added user: {
+    "user" : "siteRootAdmin",
+    "roles" : [
+        {
+            "role" : "root",
+            "db" : "admin"
+        }
+    ]
+}
+</pre>
+    </li>
+    <li>stop the mongod instance
+    </li> 
+    <li>Create the key file to be used by each member of the replica set. To generate pseudo-random data to use for a keyfile, issue the following openssl command:
+<pre>openssl rand -base64 741 > mongodb-keyfile
+chmod 600 mongodb-keyfile</pre>
+You may generate a key file using any method you choose. Always ensure that the password stored in the key file is both long and contains a high amount of entropy. Using openssl in this manner helps generate such a key.</li>  
+    <li>Start the mongoDB with security key:
+    First, edit /etc/mongod.conf.
+    <pre># path to a key file storing authentication info for connections
+# between replica set members
+keyFile=/home/ubuntu/.ssh/mongodb-keyfile
+</pre>
+    <pre>$ sudo mongod --config /etc/mongod.conf &</pre></li>
+    Check if it started correctly.    
+<pre> I CONTROL  [initandlisten] allocator: tcmalloc
+ I CONTROL  [initandlisten] options: { config: "/etc/mongod.conf", security: { keyFile: "/home/ubuntu/.ssh/mongodb-keyfile" }, storage: { dbPath: "/var/lib/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/var/log/mongodb/mongod.log" } }
+ I NETWORK  [initandlisten] waiting for connections on port 27017</pre>
+    <li>Create user for specific database.
+<pre>
+    <li>connect to mongo shell<pre>$ mongo --port 27017 -u siteUserAdmin -p password --authenticationDatabase admin</pre></li>
+
+use nota
+db.createUser( { user: "jinna", pwd: "password", roles: [ {role: "readWrite", db: "nota"} ]}  ) </pre></li>
+
+    
+</ol>
+
+</div> <!-- dark -->
+
+

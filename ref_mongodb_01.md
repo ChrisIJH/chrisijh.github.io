@@ -7,6 +7,19 @@ permalink: /reference/ref_mongodb_01/
 
 <h1>MongoDB</h1>
 
+<h2>Installation</h2>
+<ol>
+  
+  <li><pre>sudo apt-get install -y mongodb-org</pre></li>
+  <li>start MongoDB (if it didnt' start yet)<pre>sudo service mongod start</pre></li>
+  <li>enable remote access from my server. Edit /etc/mongodb.conf <pre># Listen to local interface only. Comment out to listen on all interfaces. 
+#bind_ip = 127.0.0.1</pre></li>
+  <li><pre>$ sudo service mongod stop
+mongod stop/waiting
+$ sudo service mongod start
+mongod start/running, process 14087</pre></li>
+  <li></li>
+</ol>
 
 <div class="dark">
 <h2>
