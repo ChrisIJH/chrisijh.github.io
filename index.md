@@ -86,7 +86,7 @@ layout: default
         </div>
      </div>
 </div>
-
+<!--
 <div class="grid grid-pad">
     <div class="col-1-1">
         <div class="content">
@@ -94,6 +94,7 @@ layout: default
         </div>
      </div>
 </div>
+-->
 <div class="grid grid-pad">
     <div class="col-1-1">
         <div class="content">
