@@ -21,10 +21,30 @@ layout: default
 
 # Contents 
 
-
-
 <hr>
+<div class="grid grid-pad">
+  <div class="col-1-1">
+    <div class="content">
+      <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</h3>
 
+      <hr>
+
+      <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</h3>
+
+
+      <hr>
+      <h3><a href="{{ base_url }}/vs/">Visualization</h3>
+      <hr>
+
+      <h3><a href="{{ base_url }}/mf/">Math Finance</a></h3>
+     <hr>
+
+      <h3><a href="{{ base_url }}/others/">Others</a></h3>
+      
+    </div>
+  </div>
+</div>
+<!--
 <div class="grid grid-pad">
     <div class="col-1-1">
        <div class="content">
@@ -44,18 +64,7 @@ layout: default
             <h3><a href="{{ base_url }}/modeling-analysis/crsp-index/">Understanding CRSP indexes</a></h3>
         </div>
      </div>
-     <!--
-     <div class="col-1-1">
-        <div class="content">
-            <h3><a href="{{ base_url }}/modeling-analysis/factor-model-1/">Factor Model</a></h3>
-        </div>
-     </div>
-    <div class="col-1-1">
-        <div class="content">
-            <h3><a href="{{ base_url }}/modeling-analysis/style-attribution-analysis/">Style Attribution Analysis</a></h3>
-        </div>
-     </div>
-     -->
+
      <div class="col-1-1">
         <div class="content">
             <h3><a href="{{ base_url }}/modeling-analysis/mvo/">Mean Variance Optimization examples(VBA, Python, Matlab)</a></h3>
@@ -86,15 +95,7 @@ layout: default
         </div>
      </div>
 </div>
-<!--
-<div class="grid grid-pad">
-    <div class="col-1-1">
-        <div class="content">
-            <h3><a href="{{base_url}}/bigdata/natural-language-processing">Natural Language Processing 1</a></h3>
-        </div>
-     </div>
-</div>
--->
+
 <div class="grid grid-pad">
     <div class="col-1-1">
         <div class="content">
@@ -132,4 +133,6 @@ layout: default
         </div>
      </div> 
 </div>
+
+-->
 <hr>
