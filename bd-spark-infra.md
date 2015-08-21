@@ -1,7 +1,7 @@
 ---
 layout: level1default 
 permalink: /bigdata/spark-infra/
---
+---
 
 
 
@@ -30,7 +30,7 @@ permalink: /bigdata/spark-infra/
 <br>
 <hr>
 [References]
-[1] http://spark.apache.org/docs/latest/hardware-provisioning.html
+[1] http://spark.apache.org/docs/latest/hardware-provisioning.html  
 [2] Embracing Spark as the Scalable Data Analytics Platform for the Enterprise - Spark Summit 2015 - Matthew Glickman (Managing Director, Goldman Sachs)
 
 
