@@ -67,3 +67,49 @@ $$
 l(\beta_0, \beta_1) = \prod_{i:y_i=1}p(x_i)\prod_{i':y_{i'}=0}(1-p(x_{i'}))
 $$
 <p>The estimates $\beta_0$ and $\beta_1$ are chosen to maximize the likelihood function.</p>
+
+
+<h2>Linear Discriminant Analysis</h2>
+
+<p>When:</p>
+
+<ul><li>the classes are well-separated.</li>
+<li>n is small and distribution of each X is normal.</li>
+<li>more than 2 response classes.</li>
+</ul>
+<p>Steps:</p>
+<ol>
+    <li>Model the distribution of repdictors (X)</li>
+    <li>Flip it using Bayes' theorem. </li>
+</ol>
+
+
+<h2>K-Nearest Neighbors</h2>
+
+<p>KNN is a completely non-parametric approach, that is no assumptions are made about the shape of the decision boundary.
+: boundary is highly non-linear</p>
+
+<p>Steps:</p>
+
+<ol>
+    <li>Identify the K points in the training data that are closest to $x_0$, represented by $N_0$.</li>
+    <li>Estimates the conditional probability for class j as the fraction of points in $N_0$ whose response values equal j:  
+    $$
+Pr(Y=j|X=x_0) = \frac{1}{K}\sum_{i\ in \ N}(Y_i=j)
+    $$</li> 
+    <li>KNN applies Bayes rule and classifies the test observation $x_0$ to the class with the largest probability.</li>
+</ol>
+
+<<table>
+
+  <tbody>
+    <tr>
+      <td>K=1</td>
+      <td>Flexible, Low bias, high variance</td>
+    </tr>
+    <tr>
+      <td>K grows</td>
+      <td>Less flexible, a decision boundary is becoming linear. Low variance, high bias.</td>
+    </tr>
+  </tbody>
+</table>
