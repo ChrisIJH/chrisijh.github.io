@@ -27,15 +27,10 @@ layout: default
     <div class="content">
 
 
-<h4><a href="{{ base_url }}/bigdata/spark-infra/">Apache Spark Infrastructure Recommendation</a></h4>
-
-<hr>
+      <hr>
       <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
             <hr>
       <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h3>
-
-
-
       <hr>
       <h3><a href="{{ base_url }}/vs/">Visualization</a></h3>
       <hr>
