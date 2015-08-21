@@ -113,3 +113,9 @@ Pr(Y=j|X=x_0) = \frac{1}{K}\sum_{i\ in \ N}(Y_i=j)
     </tr>
   </tbody>
 </table>
+
+
+<br>
+<hr>
+[References]
+[1] James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An Introduction to Statistical Learning: With Applications in R. N.p.: n.p., n.d. Print.
