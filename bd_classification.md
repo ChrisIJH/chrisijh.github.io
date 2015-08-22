@@ -177,6 +177,8 @@ $$
 <img src="https://www.evernote.com/l/AAl0FpuNEFRCC7luNnqz3G8g3zqmEyZIlLkB/image.png">
 
 <p>The <strong>support vector machine</strong> is an extension of the support vector classifier using <strong>kernels</strong>. We want to enlarge our feature space in order to accommodate a non-linear boundary between the classes.</p>
+<img src="https://www.evernote.com/l/AAkKhhCqUgZOqYFP2R_Zz7IWpXYKkFvRp_sB/image.png">
+
 
 
 
