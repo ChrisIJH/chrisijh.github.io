@@ -100,7 +100,7 @@ Pr(Y=j|X=x_0) = \frac{1}{K}\sum_{i\ in \ N}(Y_i=j)
     <li>KNN applies Bayes rule and classifies the test observation $x_0$ to the class with the largest probability.</li>
 </ol>
 
-<<table>
+<table>
 
   <tbody>
     <tr>
@@ -115,7 +115,72 @@ Pr(Y=j|X=x_0) = \frac{1}{K}\sum_{i\ in \ N}(Y_i=j)
 </table>
 
 
+<h2>Maximal Margin Classifier</h2>
+
+<p>p-dimensional hyperplan</p>
+$$
+\beta_0 + \beta_1X_1 + ...+\beta_pX_p = 0
+$$
+
+<p>Stpes:</p>
+<ul>
+  <li>Compute the distance from each training observation to a given separating hyperplane.</li>
+  <li>margin(the minimal distance from the observations to the hyperplane</li>
+  <li>Maximal margin hyperplane that has the farthest minimum distance to the training observations.</li>
+  <li>Although the maximal margin classifier is oten successful, it can also lead to overfitting when p is large.</li>
+</ul>  
+
+<p>The maximal margin hyperplane is the solutino to the optimzation problem.</p>
+<!--
+$$\begin{align}
+max_{\beta_0, \beta_1,....,\beta_p}M  \\
+s.t. \sum_{j=1}^{p}\beta_j^2 = 1 \newline \\
+
+
+y_i(\beta_0 + \beta_1x_{i1} + \beta_2x_{i2}+ ..... + \beta_px_{ip})  \geq M \\
+
+where, \ i=1,....,n
+\end{align}
+
+$$
+-->
+<img src="https://www.evernote.com/l/AAlRN_pAkMtCHK7vtpFgu6Nb4CNDJ-kGurYB/image.png">
+
+<p>Problems:</p>
+
+<ul>
+  <li>The distance can be seen as a measure of the confidence.</li>
+  <li>Extremely sensitive to a change in a single observation.</li>
+</ul>
+
+<h2>Support Vector Classifier</h2>
+<p>Rather than completely separate the observations, it could be worthwhile to misclassify a few training obsevations in order to do a better job in classifying the remaining observations.</p>
+
+
+
+<img src="https://www.evernote.com/l/AAmf7pUFzxhMyLhivpeBfIV1Kbarmj173ewB/image.png">
+
+
+<p>The hyperplane is chosen to separate most of the training observations into the two classes, but may misclassify a few observations.</p>
+<h4>The differece from maximal margin classifier.</h4>
+<p>An observation that lies strictly on the correct side of the margin does not affect the support vector classifier. Changing the position of that obsrvation would not change the classifier at all as long as its position remains on the correct side fo the margint.</p>
+
+<h4>The difference from LDA</h4>
+<p>LDA depends on the mean of all of the observations within each class as well as within-class covariance amtrix computed using all of the observations. However, Support Vector Classifier is robust to the behavior of observations that are far away from the hyperplane.</p>
+
+
+<h2>Support Vector Machine</h2>
+<p>For non-linearity, fit a support vector classifier using 2p features.</p>
+$$
+X_1, X_1^2, X_2, X_2^2, .... , X_p, X_p^2
+$$
+<img src="https://www.evernote.com/l/AAl0FpuNEFRCC7luNnqz3G8g3zqmEyZIlLkB/image.png">
+
+<p>The <strong>support vector machine</strong> is an extension of the support vector classifier using <strong>kernels</strong>. We want to enlarge our feature space in order to accommodate a non-linear boundary between the classes.</p>
+
+
+
 <br>
 <hr>
 [References]
-[1] James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An Introduction to Statistical Learning: With Applications in R. N.p.: n.p., n.d. Print.
+[1] James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An Introduction to Statistical Learning: With Applications in R. Print.
