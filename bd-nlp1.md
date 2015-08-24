@@ -5,6 +5,7 @@ permalink: /bigdata/nlp1/
 
 <h1>Natural Language Processing</h1>
 
+<p>Study Note for "Text Mining and Analytics by ChengXiang Zhai, University of Illinois at Urbana Champaign" at Coursera.(https://class.coursera.org/textanalytics-001/wiki/Week1Overview)</p>
 <h2>Basic Concepts in NLP</h2>
 <ul>
     <li>Lexical Analysis (Part-of-speech tagging)</li>
@@ -49,6 +50,41 @@ permalink: /bigdata/nlp1/
   </tbody>
 </table>
 <p>This idea is implemented in many different ways.</p>
+
+<h2>Paradigmatic Relation Discovery</h2>
+
+<div class="piktowrapper-embed" pikto-uid="7459978-nlp1_1" >
+    <div class="pikto-canvas-wrap">
+        <div class="pikto-canvas"></div>
+    </div>
+</div>
+<script>
+    (function(d){
+        var js, id="pikto-embed-js", ref=d.getElementsByTagName("script")[0];
+        if (d.getElementById(id)) { return;}
+        js=d.createElement("script"); js.id=id; js.async=true;
+        js.src="https://magic.piktochart.com/assets/embedding/embed.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+</script>
+
+<p>So, now Bag of Words --> Vector Space Model(VSM)</p>
+
+<img src="https://www.evernote.com/l/AAm1QXdAu8JIJaOAcqHrtCo0v95utxntTmsB/image.png">
+<img src="https://www.evernote.com/l/AAn0hVPkznhB8q8bShjo41GVssuVNujTuj0B/image.png">
+<p>Next, Expected Overlap of words in context(EOWC) methods can be used.</p>
+<p>But, there are still unsolved problem.
+<ul><li>Better for frequent term than mathching more distinct term.<ul><li>Can ge improved by sublinear transformation of Term Frequency(TF)</li></ul></li>
+<li>Treats 'the' and 'eats' equally. <ul><li>Can be improved by rewarding matching a rare word: IDF term weighting</li></ul></li></ul>
+</p>
+
+<h2>Systegmatic Relation</h2>
+<p>Systegmatic Relation = Correlated Occurences</p>
+
+
+
+
+
 
 
 
