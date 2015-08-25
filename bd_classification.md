@@ -67,3 +67,22 @@ $$
 l(\beta_0, \beta_1) = \prod_{i:y_i=1}p(x_i)\prod_{i':y_{i'}=0}(1-p(x_{i'}))
 $$
 <p>The estimates $\beta_0$ and $\beta_1$ are chosen to maximize the likelihood function.</p>
+
+
+<h2>Linear Discriminant Analysis</h2>
+
+
+$\pi_k $ Prior Probability. A randomly chosen observation comes from the kth class  
+$f_k(X) = Pr(X=x|Y=k)$  
+$$
+Pr(X=x|Y=k) = \frac{Pr(X=x,Y=k)}{Pr(Y=k)}  
+$$
+$$
+Pr(Y=k| X=x) = \frac{Pr(X=x,Y=k)}{Pr(X=x)}    
+$$
+
+$Pr(Y=k| X=x)$ is refered to Posterior probability.
+
+$$
+Pr(Y=k| X=x) = \frac{Pr(X=x|Y=k) Pr(Y=k)}{Pr(X=x)}  
+$$

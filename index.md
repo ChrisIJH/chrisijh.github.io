@@ -25,22 +25,15 @@ layout: default
 <div class="grid grid-pad">
   <div class="col-1-1">
     <div class="content">
-      <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</h3>
-
+      <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h3>
       <hr>
-
-      <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</h3>
-
-
+      <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
       <hr>
-      <h3><a href="{{ base_url }}/vs/">Visualization</h3>
+      <h3><a href="{{ base_url }}/vs/">Visualization</a></h3>
       <hr>
-
       <h3><a href="{{ base_url }}/mf/">Math Finance</a></h3>
-     <hr>
-
+      <hr>
       <h3><a href="{{ base_url }}/others/">Others</a></h3>
-      
     </div>
   </div>
 </div>
