@@ -3,8 +3,7 @@ layout: level1default
 permalink: /bigdata/data-cleaning/
 ---
 
-Introduction
-------------
+
 
 ## Data Clean
 <div class="piktowrapper-embed" pikto-uid="6835991-data_clean" >
@@ -51,6 +50,21 @@ def removePunct(text):
     out = out.lower()
     return out
 </code></pre>
+
+
+<p>Example 3:</p>
+<p>Split Strings</p>
+
+<pre><code>
+words = "fast toward; lime, flow.engine,           for"
+import re
+re.split(r'[;,\s]\s*', words)
+</code></pre>
+output
+<pre><code>
+['fast', 'toward', 'lime', 'flow', 'engine', 'for']
+</code></pre>
+
 
 
 ## 
