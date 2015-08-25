@@ -78,31 +78,93 @@ from pymongo import MongoClient
 
   2.a. Spark
 
-      rdd = sc.parallelize(tobe_parallelized)
+      data_raw = sc.parallelize(tobe_parallelized)
 
 3. Data Cleaning  
 <pre><code>
+def split_lines(docs):  
+    result = []  
+    for line in docs:  
+        a = line.split()  
+        result.append(a)  
+    return result  
 
-def removePuncLower(text):
-    regex = re.compile('[%s]' % re.escape(string.punctuation))
-    out = re.sub(regex," ", text) # Punctuation
+def to_lowr(docs):
+    i=0
+    for words in docs:
+        docs[i] = [w.lower() for w in words]
+        i +=1
 
-    out = out.lower()
-    out = out.strip()
-    out1 = re.split(u'[\s]\s*', out) # Whitespace
-    
-    result = []
-    for w in out1:
-        regex2 = re.compile('[\W*]') # nonword character
-        tmp = re.sub(regex2, '', w)
+# sample
+[u'Novel writing tips- Eric J Gates http://t.co/Doz5HUxSlS',
+ u'Bitches love writing r.i.p \U0001f629\U0001f629\U0001f629 they jus want act like they kno ppl',
+ u"Anchorage AK - Tutor or Teacher - Elementary K-6th - I'm interested in finding a tutor for my son who will be ... http://t.co/lxIJSguo9m"]
 
-        if re.findall(u'\d+', tmp)!=[]: # if the string is either number only or mix of letter, omit it.
-            continue
-        else:
-            tmp = tmp.strip()
-            result.append(re.sub(regex2, '', tmp))
-                       
-    return result
+def elim_url(line):
+    for lstOfWords in tmp:
+        i=0
+        for word in lstOfWords:
+            if word.find("http")!= -1:
+                lstOfWords.pop(i)
+                # since one is popped, need to maintain i as same as before
+            else:
+                i +=1
+
+# sample
+[ [u'Novel', u'writing', u'tips-', u'Eric', u'J', u'Gates'],
+  [u'Bitches',
+  u'love',
+  u'writing',
+  u'r.i.p',
+  u'\U0001f629\U0001f629\U0001f629',
+  u'they',
+  u'jus',
+  u'want',
+  u'act',
+  u'like',
+  u'they',
+  u'kno',
+  u'ppl'] ]
+
+def elim_at(line):
+    for lstOfWords in line:
+        i=0
+        for word in lstOfWords:
+            if word.startswith("@"):
+                lstOfWords.pop(i)
+            i +=1
+
+def elim_hash(line):
+    for lstOfWords in line:
+        i=0
+        for word in lstOfWords:
+            if word.startswith("#"):
+                lstOfWords.pop(i)
+                # since one is popped, need to maintain i as same as before
+            else:
+                i +=1
+
+def elim_dash(docs):
+    for j, line in enumerate(docs):
+        for i, w in enumerate(line):
+            if w.startswith("-") or w.endswith("-"):
+                line[i] = w.replace("-", "")
+            else:
+                line[i] = w.replace("-", " ")
+
+def find_not(docs):
+    # Apostrophe
+    i=0
+    for listOfWords in docs:
+        docs[i] = [ "not" if word.find("'t")!=-1 else word for word in listOfWords]
+        i += 1
+
+def elim_iam(doc):
+    iam = ["i'm", "you're", "he's", "she's", "we're", "i'd", "she'd", "he'd", "you'd", "we'd","it's", "it'd", "i've", "we've"]
+    for lstOfWords in doc:
+        for word in lstOfWords:
+            if word in iam:
+                lstOfWords.remove(word)
 
 def stop_word(doc):
     stopset = set(nltk.corpus.stopwords.words('english'))
@@ -112,8 +174,14 @@ def stop_word(doc):
             if filter_stops(word):
                 lstOfWords.remove(word)
 
-
-TotalToken = rdd.map(lambda x: x[1]).flatMap(removePuncLower).map(lambda x: (x,1)).reduceByKey(add)
+tmp = split_lines(tobe_parallelized)
+to_lowr(tmp)
+elim_url(tmp)
+elim_at(tmp)
+elim_dash(tmp)
+find_not(tmp)
+elim_iam(tmp)
+stop_word(tmp)
 </code></pre>
 
 ## Analysis
@@ -134,14 +202,22 @@ In this case, the current python list looks like the following:
      [u'girls', u'yous', u'diss', u'writing', u'letters', u'like', u'miss'],  
      [u'writing', u'lyrics', u'agonizing,', u'actually', u'[outfit]']  
 ]  
+It is much easier to have one flat string list at least for this example.  
 
+    total=[]
+    for lstOfWords in tmp:
+        for word in lstOfWords:
+            total.append(word)
+
+    t_data = sc.parallelize(total).cache()
+
+Now, Use apply map and reduce to Spark RDD.
 
 <pre><code>
 counts_map = t_data.map(lambda word: (word, 1)).reduceByKey(lambda a, b: a+b)
 count_map_rev = counts_map.map(lambda (x,y): (y,x))
+
 top_100 = count_map_rev.top(100)
-# OR
-top_100 = counts_map.takeOrdered(100, key=lambda x: -x[1])
 
 with open("./output.csv", "w") as f:
 for line in top_100:

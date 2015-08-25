@@ -166,8 +166,7 @@ print match.group()</code></pre>
 
 <h5>More Metacharacters</h5>
 
-<table>
-  
+<table> 
   <tr>
     <td>a|b</td>
     <td>"or" operator. any string that matches either a or b</td>
@@ -205,13 +204,16 @@ print match.group()</code></pre>
 print p.match('ababababab').span()</code></pre>
 <p>output</p>
 (0,10)
-
+<br>
 <pre><code>p = re.compile('(a)b')
 m = p.match('ab')
 m.group()
 </code></pre>
 <p>output</p>
 'ab'
+
+<br>
+
 
 
 

@@ -3,8 +3,7 @@ layout: level1default
 permalink: /bigdata/data-cleaning/
 ---
 
-Introduction
-------------
+
 
 ## Data Clean
 <div class="piktowrapper-embed" pikto-uid="6835991-data_clean" >
@@ -21,6 +20,50 @@ Introduction
         ref.parentNode.insertBefore(js, ref);
     }(document));
 </script>
+
+<h2>Removing Punctuation</h2>
+
+<h4>string.translate(s, table[, deletechars])</h4>
+<p><strong>Delete</strong> all characters <strong>from s</strong> that are <strong>in deletechars</strong>, then translate the characters using table, which must be a 256-character string giving the translation for each character value, indexed by its ordinal. If table is None, then only the character deletion step is performed.</p>
+<h4>string.maketrans(from, to)</h4>
+<p>Return a translation <strong>table</strong> for passing to translate(), that will map each character in from into the character at the same position in to; from and to must have the same length.</p>
+
+<p>Example 1:</p>
+<pre><code>
+import string
+table1 = string.maketrans('xyz', 'abc')
+sample = "x and y and z can be abc."
+sample.translate(table1)
+</code></pre>
+<p>output:<br>
+a and b and c can be abc.</p>
+
+
+<p>Example 2:</p>
+<pre><code>
+import string
+
+def removePunct(text):
+    tbl = string.maketrans("","")
+    out = text.translate(tbl, string.punctuation)
+    out = out.strip()
+    out = out.lower()
+    return out
+</code></pre>
+
+
+<p>Example 3:</p>
+<p>Split Strings</p>
+
+<pre><code>
+words = "fast toward; lime, flow.engine,           for"
+import re
+re.split(r'[;,\s]\s*', words)
+</code></pre>
+output
+<pre><code>
+['fast', 'toward', 'lime', 'flow', 'engine', 'for']
+</code></pre>
 
 
 
