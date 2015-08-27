@@ -21,26 +21,29 @@ layout: default
 
 # Contents 
 
-<h3><span class="label label-danger">New</span><a href="{{ base_url }}/bigdata/bd-amex">American Express Digital Acquisition</a></h3>
 <hr>
 <div class="grid grid-pad">
   <div class="col-1-1">
     <div class="content">
+<<<<<<< HEAD
+      <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h3>
+      <hr>
+      <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
+      <hr>
+=======
 
 
-      
+      <hr>
       <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
             <hr>
       <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h3>
       <hr>
+>>>>>>> 826899093220eaf984aa72f25e91acd80491894a
       <h3><a href="{{ base_url }}/vs/">Visualization</a></h3>
       <hr>
-
       <h3><a href="{{ base_url }}/mf/">Math Finance</a></h3>
-     <hr>
-
+      <hr>
       <h3><a href="{{ base_url }}/others/">Others</a></h3>
-      
     </div>
   </div>
 </div>
