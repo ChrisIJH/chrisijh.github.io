@@ -21,13 +21,12 @@ layout: default
 
 # Contents 
 
-<hr>
 <div class="grid grid-pad">
   <div class="col-1-1">
     <div class="content">
 
 
-      <hr>
+      
       <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
             <hr>
       <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h3>
