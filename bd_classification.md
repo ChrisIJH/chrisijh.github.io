@@ -71,7 +71,6 @@ $$
 
 <h2>Linear Discriminant Analysis</h2>
 
-<<<<<<< HEAD
 
 $\pi_k $ Prior Probability. A randomly chosen observation comes from the kth class  
 $f_k(X) = Pr(X=x|Y=k)$  
@@ -87,7 +86,6 @@ $Pr(Y=k| X=x)$ is refered to Posterior probability.
 $$
 Pr(Y=k| X=x) = \frac{Pr(X=x|Y=k) Pr(Y=k)}{Pr(X=x)}  
 $$
-=======
 <p>When:</p>
 
 <ul><li>the classes are well-separated.</li>
