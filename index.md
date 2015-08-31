@@ -21,10 +21,6 @@ layout: default
 
 # Contents 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e77d28c2aeb51ace70fcb4d78012165fefc75f9d
 <div class="grid grid-pad">
   <div class="col-1-1">
     <div class="content">
