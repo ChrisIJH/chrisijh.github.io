@@ -97,3 +97,14 @@ permalink: /reference/ref_linux_02/
   </tbody>
 </table>
 
+<h3>Finding the number of columns in csv file</h3>
+
+<pre><code>
+wc -l millionsong.txt
+head -n 1 millionsong.txt
+
+head -n 1 millionsong.txt | wc -c  # just count the letters in first row.
+head -n 1 millionsong.txt | awk -F',' ' { print NF }'  # Right result
+
+</code></pre>
+
