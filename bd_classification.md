@@ -71,6 +71,23 @@ $$
 
 <h2>Linear Discriminant Analysis</h2>
 
+<<<<<<< HEAD
+
+$\pi_k $ Prior Probability. A randomly chosen observation comes from the kth class  
+$f_k(X) = Pr(X=x|Y=k)$  
+$$
+Pr(X=x|Y=k) = \frac{Pr(X=x,Y=k)}{Pr(Y=k)}  
+$$
+$$
+Pr(Y=k| X=x) = \frac{Pr(X=x,Y=k)}{Pr(X=x)}    
+$$
+
+$Pr(Y=k| X=x)$ is refered to Posterior probability.
+
+$$
+Pr(Y=k| X=x) = \frac{Pr(X=x|Y=k) Pr(Y=k)}{Pr(X=x)}  
+$$
+=======
 <p>When:</p>
 
 <ul><li>the classes are well-separated.</li>
@@ -186,3 +203,4 @@ $$
 <hr>
 [References]
 [1] James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An Introduction to Statistical Learning: With Applications in R. Print.
+>>>>>>> 826899093220eaf984aa72f25e91acd80491894a
