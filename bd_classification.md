@@ -81,7 +81,10 @@ $$
 Pr(Y=k| X=x) = \frac{Pr(X=x,Y=k)}{Pr(X=x)}    
 $$
 
-$Pr(Y=k| X=x)$ is refered to Posterior probability.
+
+$$
+Pr(Y=k| X=x)
+$$ is refered to Posterior probability.
 
 $$
 Pr(Y=k| X=x) = \frac{Pr(X=x|Y=k) Pr(Y=k)}{Pr(X=x)}  
