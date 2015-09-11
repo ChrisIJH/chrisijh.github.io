@@ -1,6 +1,6 @@
 ---
 layout: level1default 
-permalink: /bigdata/lda-qda-knn-kmeans/
+permalink: /bigdata/lda-qda-knn/
 ---
 
 <h1>LDA</h1>
@@ -46,8 +46,8 @@ knn.predict(X_test)
 knn.score(X_test,y_resp_test)
 # 0.53174603174603174 correct rate
 </code></pre>
-
-
+<p>From this dataset and classification methods, QDA has the best correct rate.</p>
+<!--
 <h1>KMeans</h1>
 <h2>Using scikit-learn</h2>
 <pre><code>
@@ -68,7 +68,7 @@ test_pred = np.where(test_pred==0, 'Down', 'Up')
 (test_pred==y_resp_test).sum().astype(float)/len(y_resp_test)
 # 0.48809523809523808 correct rate
 </code></pre>
-
+-->
 
 
 

@@ -117,6 +117,6 @@ y_test_predictions2 = lr2.predict(X_test)
 
 <p>After using predictors which has better p-value from the result of regression using whole data, the correct rate for test data is improved to 56%. But, it is still not good. May need to try other algorithm.</p>
 
-<p>Try Linear Dscriminant Analysis <a href="../lda-qda/"> here</a>.</p>
+<p>Try Linear Dscriminant Analysis <a href="../lda-qda-knn/"> here</a>.</p>
 
 

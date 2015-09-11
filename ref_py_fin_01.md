@@ -81,4 +81,4 @@ permalink: /reference/ref_py_fin_01/
 
 <h1>Python</h1>
 
-<p>Default, pass by reference. When copied then?</p>
+<p>Default, pass by reference.</p>
