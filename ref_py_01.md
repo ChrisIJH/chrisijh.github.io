@@ -4,6 +4,13 @@ permalink: /reference/ref_py_01/
 ---
 
 <h1>Python 01</h1>
+
+<h2>Generator</h2>
+
+<h3>Generator Function</h3>
+
+<p>Same as normal function except it uses <strong class="mark">'yield'</strong> not 'return'. It is one-shot iteration just like __iter__(). It saves memory by slicing the job.</p>
+
 <h2>__iter__ , next</h2>
 
 <p>You should prefer __iter__ to __getitem__ because __iter__ supports general iteration contexts better.</p>
