@@ -6,11 +6,73 @@ permalink: /reference/ref_py_01/
 <h1>Python 01</h1>
 
 <h2>Generator</h2>
-
+<p>Generator can provide a simpler alternative to manually saving the state between iterations in class objects. Same as normal function except it uses <strong class="mark">'yield'</strong> not 'return' by returning results one at a time. It is suspending and resuming their state between each. It is one-shot iteration just like __iter__(). It saves memory by slicing the job. Use it when dealing with large data sets. It is slightly slower than list comprehension.</p>
 <h3>Generator Function</h3>
 
-<p>Same as normal function except it uses <strong class="mark">'yield'</strong> not 'return'. It is one-shot iteration just like __iter__(). It saves memory by slicing the job.</p>
+<h5>a.next() and next(a)</h5>
+<pre><code>
+def A(n):
+    for i in range(n):
+        yield i
+a = A(3)
+a
+# <generator object A at 0x1042aafa0>
+a.next()
+# 0
+a.next()
+# 1
+a.next()
+# 2
+a.next()
+# StopIteration 
 
+-----
+b=A(3)
+next(b)
+# 0 
+next(b)
+# 1
+next(b)
+# 2
+next(b)
+# StopIteration 
+</code></pre>
+
+<h5>send(number)</h5>
+<p>Useful when caller wants to terminate by seding termination code or redirect by passing a new position in data being processed inside the genrator.</p>
+<pre><code>
+def D():
+    for i in range(5):
+        X = yield i
+        print(X)
+d=D()
+d
+# <generator object D at 0x10477c7d0>
+next(d)
+# 0
+d.send(10)
+# 10
+# 1
+d.send(21)
+# 21
+# 2
+</code></pre>
+
+<h3>Generator Expressions</h3>
+
+<p>Same as list comprehension except using '( )' instead of '[ ]'. List comprehension creates the result list in memory. But generator returns a generator object - an automatically created iterable.</p>
+<pre><code>
+[x for x in range(2)] # simple list comprehension
+# [0, 1]
+(x for x in range(2)) # Generator expression
+# <generator object <genexpr> at 0x10477cc30>
+
+------
+
+K = (x for x in range(2))
+next(K)
+# 0
+</code></pre>
 <h2>__iter__ , next</h2>
 
 <p>You should prefer __iter__ to __getitem__ because __iter__ supports general iteration contexts better.</p>
