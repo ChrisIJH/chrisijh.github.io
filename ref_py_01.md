@@ -6,7 +6,7 @@ permalink: /reference/ref_py_01/
 <h1>Python 01</h1>
 
 <h2>Generator</h2>
-<p>Generator can provide a simpler alternative to manually saving the state between iterations in class objects. Same as normal function except it uses <strong class="mark">'yield'</strong> not 'return' by returning results one at a time. It is suspending and resuming their state between each. It is one-shot iteration just like __iter__(). It saves memory by slicing the job. Use it when dealing with large data sets. It is slightly slower than list comprehension.</p>
+<p>Generator can provide a simpler alternative to manually saving the state between iterations in class objects. Same as normal function except it uses <strong class="mark">'yield'</strong> not 'return' by wwreturning results one at a time. It is suspending and resuming their state between each. It is one-shot iteration just like __iter__(). It saves memory by slicing the job. Use it when dealing with large data sets. It is slightly slower than list comprehension.</p>
 <h3>Generator Function</h3>
 
 <h5>a.next() and next(a)</h5>
@@ -67,12 +67,24 @@ d.send(21)
 (x for x in range(2)) # Generator expression
 # <generator object <genexpr> at 0x10477cc30>
 
-------
-
 K = (x for x in range(2))
 next(K)
 # 0
 </code></pre>
+
+<h3>Similar behavior in built-in</h3>
+<h4>Dictionary</h4>>
+<img src="https://www.evernote.com/l/AAn-lS3VBudCFLW2OizY5t2g4G1s2ejI-2QB/image.png">
+
+<h4>In function</h4>
+<h5>func(*....)</h5>
+<img src="https://www.evernote.com/l/AAlHNUs4Wb5K_7N3SD8vs80fuZDBTdFEdiIB/image.png">
+
+
+
+
+
+
 <h2>__iter__ , next</h2>
 
 <p>You should prefer __iter__ to __getitem__ because __iter__ supports general iteration contexts better.</p>
