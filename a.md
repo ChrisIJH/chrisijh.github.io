@@ -28,7 +28,8 @@ permalink: /a/
 <hr>
 <a href="{{ base_url }}/reference/ref_py_fin_01/">ref_py_fin_01</a><br>
 <a href="{{ base_url }}/reference/ref_py_01/">ref_py_01 (Generator)</a><br>
-<a href="{{ base_url }}/reference/ref_py_02/">ref_py_01 (Decorator)</a><br>
+<a href="{{ base_url }}/reference/ref_py_02/">ref_py_02 (Decorator)</a><br>
+<a href="{{ base_url }}/reference/ref_py_03/">ref_py_03 (enumerate)</a><br>
 
 <hr>
 <a href="{{ base_url }}/reference/ref_java_01/">ref_java_01</a><br>
