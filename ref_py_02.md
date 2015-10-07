@@ -144,7 +144,7 @@ print a.E() # <div>Arg1 is: arg1 , Arg2 is: arg2 </div>
 def R(tag):
     def D(f):
         def C(test):
-            return "<%s>, %s, </%s>" % (tag, f(test), tag)
+            return "%s, %s, /%s" % (tag, f(test), tag)
         return C
     return D
 
@@ -158,7 +158,61 @@ class A:
         return "Arg1 is: %s , Arg2 is: %s " % (self.arg1 , self.arg2)
 
 a = A()
-print a.E() # <p>, Arg1 is: arg1 , Arg2 is: arg2 , </p>
+print a.E() # <p>, Arg1 is: arg1 , Arg2 is: arg2 , </p>   
+</code></pre>
+
+
+
+<h2>From Learning Python 5th ed</h2>
+
+<pre><code>
+
+def Deco(f):
+    def wrapper(*args):
+        return "decorated: " + str(args)
+    return wrapper
+
+@Deco
+def f(*args):
+    return args
+
+f([1,2])  # 'decorated: ([1, 2],)'
+
+</code></pre>
+
+<pre><code>
+class Decor:
+    def __init__(self, f):
+        self.f = f
+        
+    def __call__(self, *args):
+        return "decorated with class: " + str(self.f(*args))
+    
+@Decor
+def f(*args):
+    return args
+
+f( [4,3,95, 6])
+# 'decorated with class: ([4, 3, 95, 6],)'
+</code></pre>
+
+<pre><code>
+def decorator(cls):
+    class wrapper:
+        def __init__(self, *args):
+            self.wrapped = cls(*args)
+            
+        def __getattr__(self, name):
+            return "You requested : " + getattr(self.wrapped, name)
+    return wrapper
+        
+@decorator
+class C:
+    def __init__(self, a, b):
+        self.attr = 'spam'
+        
+x = C(6,7)
+x.attr
 </code></pre>
 
 <h3>With built_in</h3>
@@ -218,3 +272,33 @@ Method.smeth(3) # using class without instance as a first argument
 Method.smeth(a, 3) # error: cannot use instance as a first argument
 </code></pre>
 
+<h1>Coding Function Decorator</h1>
+
+<h2>Tracing calls</h2>
+
+<pre><code>
+class tracer:
+    def __init__(self, func):
+        self.calls = 0
+        self.func = func
+    
+    def __call__(self, *args):
+        self.calls +=1
+        print('call %s to %s' % (self.calls, self.func.__name__))
+        self.func(*args)
+
+@tracer
+def spam(a,b,c):
+    print(a+b+c)
+
+spam(1,2,3)
+#call 1 to spam
+#6
+
+spam('a','b','c')
+#call 2 to spam
+#abc
+
+spam.calls # Just like spam is the instance.
+# 2
+</code></pre>
