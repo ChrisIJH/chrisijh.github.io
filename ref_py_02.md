@@ -302,3 +302,61 @@ spam('a','b','c')
 spam.calls # Just like spam is the instance.
 # 2
 </code></pre>
+
+<h1>Coding Class Decorators</h1>
+
+<h2>Singleton</h2>
+
+<pre><code>
+instances= {}
+
+def singleton(aClass):
+    def onCall(*args, **kwargs):
+        if aClass not in instances:
+            instances[aClass] = aClass(*args, **kwargs)
+        return instances[aClass]
+    return onCall
+
+@singleton
+class Person:
+    def __init__(self, name, hours, rate):
+        self.name = name
+        self.hours = hours
+        self.rate = rate
+        
+    def pay(self):
+        return self.hours*self.rate
+
+@singleton
+class Spam:
+    def __init__(self, val):
+        self.attr = val
+</code></pre>
+
+<pre><code>
+bob = Person('Bob', 40,10)
+
+instances
+# {<class __main__.Person at 0x106881530>: <__main__.Person instance at 0x106911290>}
+
+print(bob.name, bob.pay())
+# ('Bob', 400)
+
+sue = Person('Sue', 50, 20)
+
+sue is bob
+# True
+
+print (sue.name, sue.pay())
+# ('Bob', 400)
+
+x = Spam(42)
+instances
+# {<class __main__.Person at 0x106881530>: <__main__.Person instance at 0x106911290>,
+# <class __main__.Spam at 0x106881598>: <__main__.Spam instance at 0x106911488>}
+
+x is y
+# True
+
+
+</code></pre>
