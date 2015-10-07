@@ -160,3 +160,61 @@ class A:
 a = A()
 print a.E() # <p>, Arg1 is: arg1 , Arg2 is: arg2 , </p>
 </code></pre>
+
+<h3>With built_in</h3>
+
+<pre><code>
+class Spam:
+    numInstances = 0
+    def __init__(self):
+        Spam.numInstances += 1
+        
+    <strong>@staticmethod</strong>
+    def printNumInstances(): # no instance passed
+        print "Num of Instances: " + str(Spam.numInstances)
+
+a = Spam()
+b = Spam()
+a.printNumInstances()
+# Num of Instances: 2
+<strong>Spam.printNumInstances()</strong>
+# Num of Instances: 2
+</code></pre>
+
+<p>Without @staticmethod, there will be error for Spam.printNumInstances()</p>
+
+<h2>Staticmethod, Classmethod</h2>
+
+<pre><code>
+class Method:
+    def imeth(self,x):
+        print self,  ": ",  str(x)
+    
+    @classmethod
+    def cmeth(cls, x):
+        print ": ", str(x)
+        
+    @staticmethod
+    def smeth(x):
+        print ": ", str(x)
+        
+    @property
+    def name(self):
+        return "Method has ", self.__class__.__name__
+
+a = Method() 
+a.imeth(2) # using normal call using instance
+Method.imeth(a, 2) # using class name with instance as a first argument
+Method.imeth(2) # cannot use without instance as a first argument
+
+# class method
+a.cmeth(3) # using instance
+Method.cmeth(3) # using class without instance as a first argument
+Method.cmeth(a,3) # error: cannot use instance as a first argument
+
+# static method
+a.smeth(3) # using instance
+Method.smeth(3) # using class without instance as a first argument
+Method.smeth(a, 3) # error: cannot use instance as a first argument
+</code></pre>
+
