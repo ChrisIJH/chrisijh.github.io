@@ -107,10 +107,12 @@ def removePuncLower(text):
 def stop_word(doc):
     stopset = set(nltk.corpus.stopwords.words('english'))
     filter_stops = lambda a: len(a) < 3 or a in stopset
+    good_words=[]
     for lstOfWords in doc:
         for word in lstOfWords:
-            if filter_stops(word):
-                lstOfWords.remove(word)
+            if not filter_stops(word):
+                good_word.append(word)
+    return good_words
 
 
 TotalToken = rdd.map(lambda x: x[1]).flatMap(removePuncLower).map(lambda x: (x,1)).reduceByKey(add)
