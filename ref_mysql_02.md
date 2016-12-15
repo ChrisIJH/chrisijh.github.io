@@ -44,3 +44,10 @@ permalink: /reference/ref_mysql_02/
 - Being copied to the same table name
 
 ## No inf to table
+
+## Find the Number of column
+Select count(*)  
+From INFORMATION_SCHEMA.COLUMNS  
+Where table_schema='db name'    
+and table_name='table name'
+
