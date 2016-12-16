@@ -23,6 +23,6 @@ printf("Last inserted record has id %d\n", mysql_insert_id($link));
 
 # Show the connections
 
-<xmp>
+
 mysql> show processlist;
-</xmp>
+
