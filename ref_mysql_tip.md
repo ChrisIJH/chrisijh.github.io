@@ -24,5 +24,7 @@ printf("Last inserted record has id %d\n", mysql_insert_id($link));
 # Show the connections
 
 
-mysql> show processlist;
+- mysql> show processlist; (The number of rows)
+- mysql> show status like '%onn%'; (Threads_connected is the No of currently open connetions)
+
 
