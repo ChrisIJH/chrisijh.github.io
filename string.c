@@ -23,5 +23,9 @@ int main(void)
       
    printf("string lenght of %s = %d\n", s[i], my_strlen(s[i]));
 
+
+// to be added in stash
+
+
    return 0;
 }
