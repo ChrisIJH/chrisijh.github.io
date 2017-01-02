@@ -24,5 +24,7 @@ int main(void)
    printf("string lenght of %s = %d\n", s[i], my_strlen(s[i]));
 
 // did at develop branch state 1
+
+// did at develop branch state 2
    return 0;
 }
