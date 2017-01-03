@@ -29,5 +29,6 @@ int main(void)
 
 //did at feature1 branch state 1
 //did at feature1 branch state 2
+//did at release_1_2 branch state 1 
    return 0;
 }
