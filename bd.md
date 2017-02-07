@@ -3,7 +3,7 @@ layout: level1default
 permalink: /bigdata/
 ---
 
-# Contents
+
 
 <h3><a href="{{ base_url }}/bigdata/spark-infra/">Apache Spark Infrastructure Recommendation</a></h3>
 <br>
