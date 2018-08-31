@@ -2,7 +2,7 @@
 layout: default
 ---
 
-
+<!--
 <div class="piktowrapper-embed" pikto-uid="6777706-devenv" >
     <div class="pikto-canvas-wrap">
         <div class="pikto-canvas"></div>
@@ -17,7 +17,7 @@ layout: default
         ref.parentNode.insertBefore(js, ref);
     }(document));
 </script>
-
+-->
 
 # Contents 
 
