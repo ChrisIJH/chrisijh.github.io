@@ -27,7 +27,7 @@ layout: default
 
       <h3><a href="https://public.tableau.com/views/Portfolio1_5/PF1Dashboard?:embed=y&:display_count=yes&publish=yes">Tableau Example with fake Global Equity Portfolio</a></h3>
 
-      
+      <hr>
 
       
       <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
