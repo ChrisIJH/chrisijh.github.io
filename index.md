@@ -25,7 +25,7 @@ layout: default
   <div class="col-1-1">
     <div class="content">
 
-      <h3><a href="https://public.tableau.com/views/Portfolio1_5/PF1Dashboard?:embed=y&:display_count=yes&publish=yes">Tableau Example with fake Global Equity Portfolio</a></h3>
+      <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/Portfolio1_5/PF1Dashboard">Tableau Example with fake Global Equity Portfolio</a></h3>
 
       <hr>
 
