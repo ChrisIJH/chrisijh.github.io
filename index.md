@@ -19,6 +19,9 @@ layout: default
 </script>
 -->
 
+<img src="QuantPlatform.jpg" alt="qp" class="inline"/>
+
+
 # Contents 
 
 <div class="grid grid-pad">
