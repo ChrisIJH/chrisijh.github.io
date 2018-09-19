@@ -24,23 +24,26 @@ layout: default
 <div class="grid grid-pad">
   <div class="col-1-1">
     <div class="content">
-
+        <h3>Updated</h3>
+    <hr>
       <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/EW_Portfolio_1/PF1Dashboard">Tableau Example with US Equity Portfolio case 1</a></h3>
 
       <hr>
     
-        <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/FactorAnalysis1/FactorAnalysis1?publish=yes">Factor Analysis</a></h3>
+        <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/FactorAnalysis1/FactorAnalysis1?publish=yes">Factor and Portfolio Construction</a></h3>
 
+      <hr>
+      <h4>Old post</h4>
       <hr>
       
-      <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
+      <h4><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h4>
             <hr>
-      <h3><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h3>
+      <h4><a href="{{ base_url }}/qf/">Quantitative Finance Modeling and Analysis</a></h4>
       <hr>
-      <h3><a href="{{ base_url }}/vs/">Visualization</a></h3>
+      <h4><a href="{{ base_url }}/vs/">Visualization</a></h4>
       <hr>
 
-      <h3><a href="{{ base_url }}/mf/">Math Finance</a></h3>
+      <h4><a href="{{ base_url }}/mf/">Math Finance</a></h4>
      <hr>
 
       <h3><a href="{{ base_url }}/others/">Others</a></h3>
