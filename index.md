@@ -28,7 +28,10 @@ layout: default
       <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/EW_Portfolio_1/PF1Dashboard">Tableau Example with fake Global Equity Portfolio</a></h3>
 
       <hr>
+    
+        <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/FactorAnalysis1/FactorAnalysis1?publish=yes">Factor Analysis</a></h3>
 
+      <hr>
       
       <h3><a href="{{ base_url }}/bigdata/">Data Science/Machine Learning related</a></h3>
             <hr>
