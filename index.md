@@ -33,7 +33,7 @@ layout: default
 
       <hr>
     
-        <h3><a href="SmartBetaProject1.htm">
+        <h3><a href="{{ base_url }}/factor1/">
         Factor and Portfolio Construction 1</a></h3>
 
       <hr>
