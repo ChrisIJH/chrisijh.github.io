@@ -33,7 +33,8 @@ layout: default
 
       <hr>
     
-        <h3><a href="https://public.tableau.com/profile/ih138#!/vizhome/FactorAnalysis1/FactorAnalysis1?publish=yes">Factor and Portfolio Construction</a></h3>
+        <h3><a href="SmartBetaProject1.htm">
+        Factor and Portfolio Construction 1</a></h3>
 
       <hr>
       <h4>Old post</h4>
