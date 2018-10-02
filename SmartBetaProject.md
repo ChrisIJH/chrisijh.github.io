@@ -1,3 +1,8 @@
+---
+layout: level1default
+permalink: /factor1/
+---
+
 
 # Smart Beta Strategy
 
