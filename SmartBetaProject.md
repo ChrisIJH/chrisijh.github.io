@@ -35,7 +35,7 @@ import yaml
 from sqlalchemy import create_engine
 
 
-engine = create_engine('mysql+pymysql://%s:%s@www.veritasbrain.net/securities_master' % 
+engine = create_engine('mysql+pymysql://%s:%s@localhost/securities_master' % 
                        (ID, PW), 
                        echo=False)
 ```
