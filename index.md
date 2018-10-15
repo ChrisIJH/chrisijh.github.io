@@ -33,9 +33,8 @@ layout: default
 
       <hr>
     
-        <h3><a href="{{ base_url }}/factor1/">
-        Factor and Portfolio Construction 1</a></h3>
-
+      <h3><a href="{{ base_url }}/factor1/">
+      Factors and Portfolio Construction 1</a></h3>
       <hr>
       <h4>Old post</h4>
       <hr>
@@ -50,7 +49,7 @@ layout: default
       <h4><a href="{{ base_url }}/mf/">Math Finance</a></h4>
      <hr>
 
-      <h3><a href="{{ base_url }}/others/">Others</a></h3>
+      <h4><a href="{{ base_url }}/others/">Others</a></h4>
       
     </div>
   </div>
