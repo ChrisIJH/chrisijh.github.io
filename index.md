@@ -34,7 +34,7 @@ layout: default
       <hr>
     
       <h3><a href="{{ base_url }}/factor1/">
-      Factors and Portfolio Construction 1</a></h3>
+      Smart Beta Strategy 1: Value vs. Value + Momentum </a></h3>
       <hr>
       <h4>Old post</h4>
       <hr>
